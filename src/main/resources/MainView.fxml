@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="it.unibo.controller.MainViewController"
+      prefWidth="400" prefHeight="600"
+      style="-fx-background-color: #ADD8E6;" alignment="CENTER" spacing="10">
+
+    <Label text="Scegli l'operazione che vorresti eseguire: " style="-fx-font-weight: bold;"/>
+
+    <Button text="Op1: Iscrizione di un Dipendente" onAction="#handleOperation" style="-fx-font-weight: bold;" fx:id="btnOp1"/>
+    <Button text="Op2: Registrazione di un nuovo Evento" onAction="#handleOperation" style="-fx-font-weight: bold;" fx:id="btnOp2"/>
+    <Button text="Op3: Iscrizione di un Dipendente impiegato in un Evento" onAction="#handleOperation" style="-fx-font-weight: bold;" fx:id="btnOp3"/>
+    <Button text="Op4: Registrazione di un nuovo carico di Bevande" onAction="#handleOperation" style="-fx-font-weight: bold;" fx:id="btnOp4"/>
+    <Button text="Op5: Iscrizione di una nuova Lista" onAction="#handleOperation" style="-fx-font-weight: bold;" fx:id="btnOp5"/>
+    <Button text="Op6: Registrazione di un nuovo Tavolo da un PR" onAction="#handleOperation" style="-fx-font-weight: bold;" fx:id="btnOp6"/>
+    <Button text="Op7: Iscrizione di un Cliente ad una Prevendita" onAction="#handleOperation" style="-fx-font-weight: bold;" fx:id="btnOp7"/>
+    <Button text="Op8: Iscrizione di un Cliente ad un Tavolo" onAction="#handleOperation" style="-fx-font-weight: bold;" fx:id="btnOp8"/>
+    <Button text="Op9: Iscrizione di un Cliente ad una Lista" onAction="#handleOperation" style="-fx-font-weight: bold;" fx:id="btnOp9"/>
+    <Button text="Op10: Iscrizione di un nuovo Cliente Bloccato" onAction="#handleOperation" style="-fx-font-weight: bold;" fx:id="btnOp10"/>
+    <Button text="Op11: Iscrizione di un nuovo Omaggio" onAction="#handleOperation" style="-fx-font-weight: bold;" fx:id="btnOp11"/>
+    <Button text="Op12: Modifica dei dati di un Tavolo già registrato" onAction="#handleOperation" style="-fx-font-weight: bold;" fx:id="btnOp12"/>
+    <Button text="Op13: Modifica dei dati di un Dipendente già registrato" onAction="#handleOperation" style="-fx-font-weight: bold;" fx:id="btnOp13"/>
+    <Button text="Op14: Modifica dei dati di un Cliente Bloccato già registrato" onAction="#handleOperation" style="-fx-font-weight: bold;" fx:id="btnOp14"/>
+    <Button text="Op15: Modifica dei dati di un Evento già registrato" onAction="#handleOperation" style="-fx-font-weight: bold;" fx:id="btnOp15"/>
+    <Button text="Op16: Scelta di una Bevanda da parte di un Tavolo" onAction="#handleOperation" style="-fx-font-weight: bold;" fx:id="btnOp16"/>
+    <Button text="Op17: Visualizzazione del numero di persone iscritte ad una Lista" onAction="#handleOperation" style="-fx-font-weight: bold;" fx:id="btnOp17"/>
+    <Button text="Op18: Visualizzazione del numero di Bevande contenute nel Menù" onAction="#handleOperation" style="-fx-font-weight: bold;" fx:id="btnOp18"/>
+
+</VBox>
