@@ -12,8 +12,8 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("it.unibo.resources.MainView.fxml"));
-        VBox root = loader.load();
+        //FXMLLoader loader = new FXMLLoader(getClass().getResource("MainView.fxml"));
+        VBox root = FXMLLoader.load(getClass().getClassLoader().getResource("MainView.fxml"));
 
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
@@ -21,7 +21,7 @@ public class Main extends Application {
         primaryStage.show();
     }
 
-    public static void main(String[] args) {
+    public void start(String[] args) {
         launch(args);
     }
 }

@@ -18,10 +18,11 @@ public class MainViewController {
     @FXML
     private void handleOpenOperationExecutor() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("it.unibo.resources.OperationExecutor.fxml"));
-            VBox root = loader.load();
+            //FXMLLoader loader = new FXMLLoader(getClass().getResource("it.unibo.resources.OperationExecutor.fxml"));
+            //VBox root = loader.load();
+            VBox root = FXMLLoader.load(getClass().getClassLoader().getResource("OperationExecutor.fxml"));
 
-            OperationExecutorController controller = loader.getController();
+            OperationExecutorController controller = new OperationExecutorController();
 
             DatabaseController dbController = new DatabaseController();
 
