@@ -8,7 +8,7 @@ import java.sql.SQLException;
 import it.unibo.util.Queries;
 import javafx.fxml.FXML;
 
-public class Op20 {
+public class Op21 {
     
     public static final String URL = "jdbc:mysql://localhost:3306/gestionale_eventi";
     public static final String USER = "root"; 
@@ -16,17 +16,18 @@ public class Op20 {
 
     @FXML
     private void executeOperation(){
-        getBestTable();
+        getBestPR();
     }
 
-    public void getBestTable() {
+    public void getBestPR() {
         try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
-             PreparedStatement stmt = conn.prepareStatement(Queries.BEST_TABLE)) {
+             PreparedStatement stmt = conn.prepareStatement(Queries.BEST_PR)) {
             ResultSet rs = stmt.executeQuery();
             if (rs.next()) {
-                String nomeTavolo = rs.getString("Nome");
-                int numeroEventi = rs.getInt("NumeroEventi");
-                System.out.println("Tavolo con più eventi: " + nomeTavolo + ", Numero eventi: " + numeroEventi);
+                String nomePR = rs.getString("Nome");
+                String cognomePR = rs.getString("Cognome");
+                int incassoTotale = rs.getInt("IncassoTotale");
+                System.out.println("Miglior PR: " + nomePR + " " + cognomePR + ", Incasso totale: " + incassoTotale);
             }
         } catch (SQLException e) {
             e.printStackTrace();

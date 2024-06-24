@@ -365,6 +365,23 @@ public class MainViewController {
         }
     }
 
+    private void handleOp21() {
+        try {
+            //FXMLLoader loader = new FXMLLoader(getClass().getResource("it.unibo.resources.OperationExecutor.fxml"));
+            //VBox root = loader.load();
+            VBox root = FXMLLoader.load(getClass().getClassLoader().getResource("Op20.fxml"));
+
+            Stage stage = new Stage();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.setTitle("Esegui Operazioni");
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+            showAlert("Errore durante il caricamento dell'interfaccia!");
+        }
+    }
+
     private void showAlert(String message) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle("Errore");

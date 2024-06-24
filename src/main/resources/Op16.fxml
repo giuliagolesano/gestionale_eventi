@@ -5,11 +5,8 @@
 
 <VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="it.unibo.controller.Op16">
     <children>
-        <Label fx:id="operationLabel" text="Inserisci i Dati del carico di Bevande"/>
-        <TextField fx:id="param1" promptText="Nome"/>
-        <TextField fx:id="param2" promptText="Tipologia"/>
-        <DatePicker fx:id="param5" promptText="Data Acquisto"/>
-        <DatePicker fx:id="param5" promptText="Data Scadenza"/>
+        <Label fx:id="operationLabel" text="Inserisci il nome del tavolo di cui vuoi vedere il numero di partecipanti"/>
+        <TextField fx:id="nome" promptText="Nome"/>
         <Button text="Esegui" onAction="#executeOperation"/>
     </children>
 </VBox>
