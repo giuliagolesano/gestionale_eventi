@@ -329,8 +329,8 @@ public class MainViewController {
             e.printStackTrace();
             showAlert("Errore durante il caricamento dell'interfaccia!");
         }
-    }
-    @FXML
+    }/* 
+        @FXML
     private void handleOp19() {
         try {
             //FXMLLoader loader = new FXMLLoader(getClass().getResource("it.unibo.resources.OperationExecutor.fxml"));
@@ -369,7 +369,7 @@ public class MainViewController {
         try {
             //FXMLLoader loader = new FXMLLoader(getClass().getResource("it.unibo.resources.OperationExecutor.fxml"));
             //VBox root = loader.load();
-            VBox root = FXMLLoader.load(getClass().getClassLoader().getResource("Op20.fxml"));
+            VBox root = FXMLLoader.load(getClass().getClassLoader().getResource("Op21.fxml"));
 
             Stage stage = new Stage();
             Scene scene = new Scene(root);
@@ -380,7 +380,7 @@ public class MainViewController {
             e.printStackTrace();
             showAlert("Errore durante il caricamento dell'interfaccia!");
         }
-    }
+    }*/
 
     private void showAlert(String message) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
