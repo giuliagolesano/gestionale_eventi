@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="it.unibo.controller.Op11">
+    <children>
+        <Label fx:id="operationLabel" text="Inserisci i Dati del Omaggio"/>
+        <DatePicker fx:id="DataEvento" promptText="Data Evento"/>
+        <TextField fx:id="nome" promptText="Nome"/>
+        <TextField fx:id="cognome" promptText="Cognome"/>
+        <DatePicker fx:id="idUnivoco" promptText="idCliente Esistente"/>
+        <TextField fx:id="categoria" promptText="categoria Omaggio"/>
+        <Button text="Esegui" onAction="#executeOperation"/>
+    </children>
+</VBox>

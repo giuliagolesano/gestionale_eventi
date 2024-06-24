@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="it.unibo.controller.Op18">
+    <children>
+        <Label fx:id="operationLabel" text="Inserisci i Dati del carico di Bevande"/>
+        <TextField fx:id="param1" promptText="Nome"/>
+        <TextField fx:id="param2" promptText="Tipologia"/>
+        <DatePicker fx:id="param5" promptText="Data Acquisto"/>
+        <DatePicker fx:id="param5" promptText="Data Scadenza"/>
+        <Button text="Esegui" onAction="#executeOperation"/>
+    </children>
+</VBox>

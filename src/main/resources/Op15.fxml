@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="it.unibo.controller.Op15">
+    <children>
+        <Label fx:id="operationLabel" text="Inserisci i Dati modificati dell'Evento"/>
+        <TextField fx:id="tema" promptText="Tema"/>
+        <DatePicker fx:id="Data" promptText="Data"/>
+        <DatePicker fx:id="id" promptText="Id Evento"/>
+        <Button text="Esegui" onAction="#executeOperation"/>
+    </children>
+</VBox>

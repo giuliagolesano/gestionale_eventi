@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="it.unibo.controller.Op7">
+    <children>
+        <Label fx:id="operationLabel" text="Inserisci i Dati del nuovo Tavolo"/>
+        <TextField fx:id="nome" promptText="Nome"/>
+        <TextField fx:id="password" promptText="Password"/>
+        <DatePicker fx:id="DataEvento" promptText="Data Evento"/>
+        <TextField fx:id="costo" promptText="Costo per Partecipante"/>
+        <TextField fx:id="posizione" promptText="Posizione nel Locale"/>
+        <Button text="Esegui" onAction="#executeOperation"/>
+    </children>
+</VBox>

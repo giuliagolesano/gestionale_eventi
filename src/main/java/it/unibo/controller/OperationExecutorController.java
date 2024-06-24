@@ -23,15 +23,16 @@ public class OperationExecutorController {
     @FXML
     private TextField param3;
     @FXML
-    private TextField param4;
-    @FXML
-    private CheckBox param5;
+    private CheckBox param4;
     @FXML
     private DatePicker param6;
     @FXML
     private DatePicker param7;
     @FXML
     private ComboBox<String> param8;
+    @FXML
+    private CheckBox param5;
+
 
     private DatabaseController dbController;
     private String selectedOperation;
@@ -51,7 +52,7 @@ public class OperationExecutorController {
 
     @FXML
     private void executeOperation() {
-        try {
+        /*try {
             switch (selectedOperation) {
                 case "Op1: Iscrizione di un Dipendente":
                     dbController.addNewClient(param1.getText(), param2.getText(), generateUniqueId(), param5.isSelected(), param4.getText(), Date.valueOf(param6.getValue()), param3.getText());
@@ -113,7 +114,7 @@ public class OperationExecutorController {
         } catch (Exception e) {
             e.printStackTrace();
             showAlert("Errore durante l'esecuzione dell'operazione!");
-        }
+        }*/
     }
 
     private void showAlert(String message) {

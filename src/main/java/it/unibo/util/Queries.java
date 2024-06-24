@@ -12,6 +12,11 @@ public class Queries {
     public static final String ADD_NEW_EVENT = "INSERT INTO Evento (Data, Tema) VALUES (?, ?);";
 
     /**
+     * Query for adding a new event.
+     */
+    public static final String ADD_NEW_EMPLOYEE = "INSERT INTO Dipendente (Disponibilità, Nome, Cognome,  Id, Tipo) VALUES (?, ?, ?, ?, ?);";
+
+    /**
      * Query for adding an employee to an event.
      */
     public static final String ADD_EMPLOYEE_EVENT = "INSERT INTO Impiegati (DataEvento, idUnivoco) VALUES (?, ?);";

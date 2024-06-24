@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="it.unibo.controller.Op3">
+    <children>
+        <Label fx:id="operationLabel" text="Inserisci i Dati del nuovo Impiegato"/>
+        <TextField fx:id="Dispo" promptText="Disponibilità"/>
+        <TextField fx:id="Nome" promptText="Nome"/>
+        <TextField fx:id="Cognome" promptText="Cognome"/>
+        <TextField fx:id="Tipo" promptText="Tipo"/>
+        <Button text="Esegui" onAction="#executeOperation"/>
+    </children>
+</VBox>
