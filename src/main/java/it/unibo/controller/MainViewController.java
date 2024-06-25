@@ -6,10 +6,21 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import it.unibo.util.Queries;
+
 
 import java.io.IOException;
 
 public class MainViewController {
+
+    public static final String URL = "jdbc:mysql://localhost:3306/gestionale_eventi";
+    public static final String USER = "root"; 
+    public static final String PASSWORD = "";
 
     @FXML
     private void initialize() {
@@ -25,7 +36,7 @@ public class MainViewController {
             Stage stage = new Stage();
             Scene scene = new Scene(root);
             stage.setScene(scene);
-            stage.setTitle("Inserisci parametri");
+            stage.setTitle("Inserisci i parametri");
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();
@@ -329,8 +340,8 @@ public class MainViewController {
             e.printStackTrace();
             showAlert("Errore durante il caricamento dell'interfaccia!");
         }
-    }/* 
-        @FXML
+    }
+    @FXML
     private void handleOp19() {
         try {
             //FXMLLoader loader = new FXMLLoader(getClass().getResource("it.unibo.resources.OperationExecutor.fxml"));
@@ -348,39 +359,49 @@ public class MainViewController {
         }
     }
     @FXML
-    private void handleOp20() {
-        try {
-            //FXMLLoader loader = new FXMLLoader(getClass().getResource("it.unibo.resources.OperationExecutor.fxml"));
-            //VBox root = loader.load();
-            VBox root = FXMLLoader.load(getClass().getClassLoader().getResource("Op20.fxml"));
-
-            Stage stage = new Stage();
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
-            stage.setTitle("Esegui Operazioni");
-            stage.show();
-        } catch (IOException e) {
+    public void getTenBestDrinks() {
+        try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
+                PreparedStatement stmt = conn.prepareStatement(Queries.TEN_BEST_DRINKS)) {
+            ResultSet rs = stmt.executeQuery();
+            while (rs.next()) {
+                String nomeBevanda = rs.getString("Nome");
+                int numeroRichieste = rs.getInt("NumeroRichieste");
+                System.out.println("Bevanda: " + nomeBevanda + ", Numero Richieste: " + numeroRichieste);
+            }
+        } catch (SQLException e) {
             e.printStackTrace();
-            showAlert("Errore durante il caricamento dell'interfaccia!");
+        }
+    }
+    @FXML
+    public void getBestTable() {
+        try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
+             PreparedStatement stmt = conn.prepareStatement(Queries.BEST_TABLE)) {
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) {
+                String nomeTavolo = rs.getString("Nome");
+                int numeroEventi = rs.getInt("NumeroEventi");
+                System.out.println("Tavolo con più eventi: " + nomeTavolo + ", Numero eventi: " + numeroEventi);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
 
-    private void handleOp21() {
-        try {
-            //FXMLLoader loader = new FXMLLoader(getClass().getResource("it.unibo.resources.OperationExecutor.fxml"));
-            //VBox root = loader.load();
-            VBox root = FXMLLoader.load(getClass().getClassLoader().getResource("Op21.fxml"));
-
-            Stage stage = new Stage();
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
-            stage.setTitle("Esegui Operazioni");
-            stage.show();
-        } catch (IOException e) {
+    @FXML
+    public void getBestPR() {
+        try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
+             PreparedStatement stmt = conn.prepareStatement(Queries.BEST_PR)) {
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) {
+                String nomePR = rs.getString("Nome");
+                String cognomePR = rs.getString("Cognome");
+                int incassoTotale = rs.getInt("IncassoTotale");
+                System.out.println("Miglior PR: " + nomePR + " " + cognomePR + ", Incasso totale: " + incassoTotale);
+            }
+        } catch (SQLException e) {
             e.printStackTrace();
-            showAlert("Errore durante il caricamento dell'interfaccia!");
         }
-    }*/
+    }
 
     private void showAlert(String message) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
