@@ -15,20 +15,23 @@
     <Button text="Iscrizione di un Utente" onAction="#handleOp1" style="-fx-font-weight: bold;" fx:id="btnOp1"/>
     <Button text="Registrazione di un nuovo Evento" onAction="#handleOp2" style="-fx-font-weight: bold;" fx:id="btnOp2"/>
     <Button text="Iscrizione di un Dipendente" onAction="#handleOp3" style="-fx-font-weight: bold;" fx:id="btnOp3"/>
-    <Button text="Iscrizione di un Dipendente impiegato in un Evento" onAction="#handleOp4" style="-fx-font-weight: bold;" fx:id="btnOp3"/>
-    <Button text="Registrazione di un nuovo carico di Bevande" onAction="#handleOp5" style="-fx-font-weight: bold;" fx:id="btnOp4"/>
-    <Button text="Iscrizione di una nuova Lista" onAction="#handleOp6" style="-fx-font-weight: bold;" fx:id="btnOp5"/>
-    <Button text="Registrazione di un nuovo Tavolo da un PR" onAction="#handleOp7" style="-fx-font-weight: bold;" fx:id="btnOp6"/>
-    <Button text="Iscrizione di un Cliente ad una Prevendita" onAction="#handleOp8" style="-fx-font-weight: bold;" fx:id="btnOp7"/>
-    <Button text="Iscrizione di un Cliente ad un Tavolo" onAction="#handleOp9" style="-fx-font-weight: bold;" fx:id="btnOp8"/>
-    <Button text= "Iscrizione di un Cliente ad una Lista" onAction="#handleOp10" style="-fx-font-weight: bold;" fx:id="btnOp9"/>
-    <Button text="Iscrizione di un nuovo Cliente Bloccato" onAction="#handleOp11" style="-fx-font-weight: bold;" fx:id="btnOp10"/>
-    <Button text="Iscrizione di un nuovo Omaggio" onAction="#handleOp12" style="-fx-font-weight: bold;" fx:id="btnOp11"/>
-    <Button text="Modifica dei dati di un Tavolo già registrato" onAction="#handleOp13" style="-fx-font-weight: bold;" fx:id="btnOp12"/>
-    <Button text="Modifica dei dati di un Dipendente già registrato" onAction="#handleOp14" style="-fx-font-weight: bold;" fx:id="btnOp13"/>
-    <Button text="Modifica dei dati di un Cliente Bloccato già registrato" onAction="#handleOp15" style="-fx-font-weight: bold;" fx:id="btnOp14"/>
-    <Button text="Modifica dei dati di un Evento già registrato" onAction="#handleOp16" style="-fx-font-weight: bold;" fx:id="btnOp15"/>
-    <Button text="Scelta di una Bevanda da parte di un Tavolo" onAction="#handleOp17" style="-fx-font-weight: bold;" fx:id="btnOp16"/>
-    <Button text="Visualizzazione del numero di persone iscritte ad una Lista" onAction="#handleOp18" style="-fx-font-weight: bold;" fx:id="btnOp17"/>
-       
+    <Button text="Iscrizione di un Dipendente impiegato in un Evento" onAction="#handleOp4" style="-fx-font-weight: bold;" fx:id="btnOp4"/>
+    <Button text="Registrazione di un nuovo carico di Bevande" onAction="#handleOp5" style="-fx-font-weight: bold;" fx:id="btnOp5"/>
+    <Button text="Iscrizione di una nuova Lista" onAction="#handleOp6" style="-fx-font-weight: bold;" fx:id="btnOp6"/>
+    <Button text="Registrazione di un nuovo Tavolo da un PR" onAction="#handleOp7" style="-fx-font-weight: bold;" fx:id="btnOp7"/>
+    <Button text="Iscrizione di un Cliente ad una Prevendita" onAction="#handleOp8" style="-fx-font-weight: bold;" fx:id="btnOp8"/>
+    <Button text="Iscrizione di un Cliente ad un Tavolo" onAction="#handleOp9" style="-fx-font-weight: bold;" fx:id="btnOp9"/>
+    <Button text= "Iscrizione di un Cliente ad una Lista" onAction="#handleOp10" style="-fx-font-weight: bold;" fx:id="btnOp10"/>
+    <Button text="Iscrizione di un nuovo Cliente Bloccato" onAction="#handleOp11" style="-fx-font-weight: bold;" fx:id="btnOp11"/>
+    <Button text="Iscrizione di un nuovo Omaggio" onAction="#handleOp12" style="-fx-font-weight: bold;" fx:id="btnOp12"/>
+    <Button text="Modifica dei dati di un Tavolo già registrato" onAction="#handleOp13" style="-fx-font-weight: bold;" fx:id="btnOp13"/>
+    <Button text="Modifica dei dati di un Dipendente già registrato" onAction="#handleOp14" style="-fx-font-weight: bold;" fx:id="btnOp14"/>
+    <Button text="Modifica dei dati di un Cliente Bloccato già registrato" onAction="#handleOp15" style="-fx-font-weight: bold;" fx:id="btnOp15"/>
+    <Button text="Modifica dei dati di un Evento già registrato" onAction="#handleOp16" style="-fx-font-weight: bold;" fx:id="btnOp16"/>
+    <Button text="Visualizzazione del numero di persone iscritte ad un Tavolo" onAction="#handleOp17" style="-fx-font-weight: bold;" fx:id="btnOp17"/>
+    <Button text="Visualizzazione del numero di persone iscritte ad una Lista" onAction="#handleOp18" style="-fx-font-weight: bold;" fx:id="btnOp18"/>
+    <Button text="Visualizzazione dei migliori 10 drink!" onAction="#getTenBestDrinks" style="-fx-font-weight: bold;" fx:id="btnOp19"/>
+    <Button text="Visualizzazione il miglior Tavolo!" onAction="#getBestTable" style="-fx-font-weight: bold;" fx:id="btnOp20"/>
+    <Button text="Visualizzazione il miglior PR!" onAction="#getBestPR" style="-fx-font-weight: bold;" fx:id="btnOp21"/>
+      
 </VBox>

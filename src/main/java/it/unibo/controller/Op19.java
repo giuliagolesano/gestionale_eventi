@@ -7,8 +7,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import it.unibo.util.Queries;
 import javafx.fxml.FXML;
+import javafx.scene.control.TextField;
 
 public class Op19 {
+    
+    @FXML
+    private TextField id;
 
     public static final String URL = "jdbc:mysql://localhost:3306/gestionale_eventi";
     public static final String USER = "root"; 
@@ -16,17 +20,17 @@ public class Op19 {
 
     @FXML
     private void executeOperation(){
-        getTenBestDrinks();
+        viewTotalMenu(id.getText());
     }
-
-    public void getTenBestDrinks() {
+    
+    public void viewTotalMenu(String id) {
         try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
-             PreparedStatement stmt = conn.prepareStatement(Queries.TEN_BEST_DRINKS)) {
+             PreparedStatement stmt = conn.prepareStatement(Queries.VIEW_TOTAL_MENU)) {
+            stmt.setString(1, id);
             ResultSet rs = stmt.executeQuery();
-            while (rs.next()) {
-                String nomeBevanda = rs.getString("Nome");
-                int numeroRichieste = rs.getInt("NumeroRichieste");
-                System.out.println("Bevanda: " + nomeBevanda + ", Numero Richieste: " + numeroRichieste);
+            if (rs.next()) {
+                int numeroBevande = rs.getInt("Numero_di_Bevande");
+                System.out.println("Numero totale di bevande nel menu: " + numeroBevande);
             }
         } catch (SQLException e) {
             e.printStackTrace();
