@@ -9,21 +9,20 @@ import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import java.sql.Date;
+import java.util.UUID;
 
 public class Op12 {
     
     @FXML
+    private DatePicker DataEvento;
+    @FXML
     private TextField nome;
     @FXML
-    private TextField password;    
+    private TextField cognome;
     @FXML
-    private TextField costo;
+    private TextField idUnivoco;
     @FXML
-    private TextField posizione;
-    @FXML
-    private TextField idPR;
-    @FXML
-    private DatePicker DataEvento;
+    private TextField categoria;
 
     public static final String URL = "jdbc:mysql://localhost:3306/gestionale_eventi";
     public static final String USER = "root"; 
@@ -31,19 +30,22 @@ public class Op12 {
 
     @FXML
     private void executeOperation(){
-        setTable(nome.getText(), password.getText(), Integer.parseInt(costo.getText()), posizione.getText(), idPR.getText(), Date.valueOf(DataEvento.getValue()));
+        addNewFreePass(Date.valueOf(DataEvento.getValue()), nome.getText(), cognome.getText(), generateUniqueId(), idUnivoco.getText(), categoria.getText());
     }
 
-    public void setTable(String nome, String password, int costoPerPartecipante, String posizione, String idPR, java.sql.Date dataEvento) {
+    private String generateUniqueId() {
+        return UUID.randomUUID().toString();
+    }
+
+    public void addNewFreePass(java.sql.Date dataEvento, String nome, String cognome, String codice, String idUnivoco, String categoriaOmaggio) {
         try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
-             PreparedStatement stmt = conn.prepareStatement(Queries.SET_TABLE)) {
-            stmt.setString(1, nome);
-            stmt.setString(2, password);
-            stmt.setInt(3, costoPerPartecipante);
-            stmt.setString(4, posizione);
-            stmt.setString(5, idPR);
-            stmt.setDate(6, dataEvento);
-            stmt.setString(7, nome);
+             PreparedStatement stmt = conn.prepareStatement(Queries.ADD_NEW_FREE_PASS)) {
+            stmt.setDate(1, dataEvento);
+            stmt.setString(2, nome);
+            stmt.setString(3, cognome);
+            stmt.setString(4, codice);
+            stmt.setString(5, idUnivoco);
+            stmt.setString(6, categoriaOmaggio);
             stmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
