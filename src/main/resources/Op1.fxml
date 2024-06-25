@@ -6,12 +6,12 @@
 <VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="it.unibo.controller.Op1">
     <children>
         <Label fx:id="operationLabel" text="Inserisci i Dati del nuovo cliente"/>
-        <TextField fx:id="nome" promptText="Nome"/>
-        <TextField fx:id="cognome" promptText="Cognome"/>
-        <CheckBox fx:id="consenso" text="Consenso"/>
-        <TextField fx:id="sesso" promptText="Sesso (Maschio o Femmina)"/>
-        <DatePicker fx:id="DataNascita" promptText="Data di Nascita"/>
-        <TextField fx:id="numeroTelefono" promptText="Numero di Telefono"/>
+        <TextField fx:id="Nome" promptText="Nome"/>
+        <TextField fx:id="Cognome" promptText="Cognome"/>
+        <CheckBox fx:id="Consenso" text="Consenso"/>
+        <TextField fx:id="Sesso" promptText="Sesso (Maschio o Femmina)"/>
+        <DatePicker fx:id="Data_Nascita" promptText="Data di Nascita"/>
+        <TextField fx:id="Numero_Telefono" promptText="Numero di Telefono"/>
         <Button text="Esegui" onAction="#executeOperation"/>
     </children>
 </VBox>

@@ -4,8 +4,7 @@ public class Queries {
     /**
      * Query for adding a new client.
      */
-    public static final String ADD_NEW_CLIENT = "INSERT INTO Cliente (Nome, Cognome, id, Consenso, Sesso, DataNascita, NumeroTelefono) VALUES (?, ?, ?, ?, ?, ?, ?);";
-
+    public static final String ADD_NEW_CLIENT = "INSERT INTO cliente (Nome, Cognome, id, Consenso, Sesso, Data_Nascita, Numero_Telefono, LISTA_Data_EVENTO, Ade_Nome, TAVOLO_Data_EVENTO, Isc_Nome) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
     /**
      * Query for adding a new event.
      */
@@ -99,7 +98,7 @@ public class Queries {
     /**
      * Query for getting the top 10 most requested drinks.
      */
-    public static final String TEN_BEST_DRINKS = "SELECT Bevanda.Nome, COUNT(*) as NumeroRichieste FROM Bevanda JOIN Ordine_Bevande ON Bevanda.Id = Ordine_Bevande.Id_BEVANDA GROUP BY Bevanda.Nome ORDER BY NumeroRichieste DESC LIMIT 10;";
+    public static final String TEN_BEST_DRINKS = "SELECT bevanda.Nome, COUNT(*) as NumeroRichieste FROM bevanda JOIN ordine_Bevande ON bevanda.Id = ordine_Bevande.Id_BEVANDA GROUP BY bevanda.Nome ORDER BY NumeroRichieste DESC LIMIT 10;";
 
     /**
      * Query for getting the table present at the most events.

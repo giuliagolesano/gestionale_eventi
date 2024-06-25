@@ -17,28 +17,28 @@ import javax.persistence.Query;
 public class Op1 {
     
     @FXML
-    private TextField nome;
+    private TextField   Nome;
     @FXML
-    private TextField cognome;
+    private TextField Cognome;
     @FXML
-    private CheckBox consenso;
+    private CheckBox Consenso;
     @FXML    
-    private TextField sesso;
+    private TextField Sesso;
     @FXML
-    private DatePicker DataNascita;
+    private DatePicker Data_Nascita;
     @FXML
-    private TextField numeroTelefono;
+    private TextField Numero_Telefono;
 
     @FXML
     private void executeOperation() {
-        addNewClient(nome.getText(), cognome.getText(), generateUniqueId(), consenso.isSelected(), sesso.getText(), Date.valueOf(DataNascita.getValue()), numeroTelefono.getText());
+        addNewClient(Nome.getText(), Cognome.getText(), generateUniqueId(), Consenso.isSelected(), Sesso.getText(), Date.valueOf(Data_Nascita.getValue()), Numero_Telefono.getText());
     }
 
     private String generateUniqueId() {
         return UUID.randomUUID().toString();
     }
 
-    public void addNewClient(String nome, String cognome, String id, boolean consenso, String sesso, Date dataNascita, String numeroTelefono) {
+    public void addNewClient(String nome, String cognome, String id, boolean consenso, String sesso, Date dataNascita, String numeroTelefono ) {
         Transaction transaction = null;
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             transaction = session.beginTransaction();
