@@ -3,7 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="it.unibo.controller.Op14">
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="it.unibo.controller.Op15">
     <children>
         <Label fx:id="operationLabel" text="Inserisci i Dati modificati del Cliente Bloccato"/>
         <TextField fx:id="id" promptText="IdClente"/>

@@ -5,7 +5,7 @@
 
 <VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="it.unibo.controller.Op17">
     <children>
-        <Label fx:id="operationLabel" text="Inserisci il nome della lista di cui vuoi vedere il numero di partecipanti"/>
+        <Label fx:id="operationLabel" text="Inserisci il nome del tavolo di cui vuoi vedere il numero di partecipanti"/>
         <TextField fx:id="nome" promptText="Nome"/>
         <Button text="Esegui" onAction="#executeOperation"/>
     </children>

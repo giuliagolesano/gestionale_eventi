@@ -5,8 +5,10 @@
 
 <VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="it.unibo.controller.Op16">
     <children>
-        <Label fx:id="operationLabel" text="Inserisci il nome del tavolo di cui vuoi vedere il numero di partecipanti"/>
-        <TextField fx:id="nome" promptText="Nome"/>
+        <Label fx:id="operationLabel" text="Inserisci i Dati modificati dell'Evento"/>
+        <TextField fx:id="tema" promptText="Tema"/>
+        <DatePicker fx:id="Data" promptText="Data"/>
+        <TextField fx:id="id" promptText="Id Evento"/>
         <Button text="Esegui" onAction="#executeOperation"/>
     </children>
 </VBox>
