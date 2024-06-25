@@ -13,11 +13,15 @@ import java.sql.Date;
 public class Op15 {
     
     @FXML
+    private TextField nome;
+    @FXML
+    private TextField cognome;
+    @FXML
+    private DatePicker dataComportamentoIllecito;
+    @FXML
+    private TextField descrizioneComportamento;
+    @FXML
     private TextField id;
-    @FXML
-    private TextField tema;
-    @FXML
-    private DatePicker Data;
 
     public static final String URL = "jdbc:mysql://localhost:3306/gestionale_eventi";
     public static final String USER = "root"; 
@@ -25,15 +29,17 @@ public class Op15 {
 
     @FXML
     private void executeOperation(){
-        setEvent(tema.getText(), Date.valueOf(Data.getValue()), id.getText());
+        setBlockedClient(nome.getText(), cognome.getText(), Date.valueOf(dataComportamentoIllecito.getValue()), descrizioneComportamento.getText(), id.getText());
     }
 
-    public void setEvent(String tema, java.sql.Date data, String codice) {
+    public void setBlockedClient(String nome, String cognome, java.sql.Date dataComportamentoIllecito, String descrizioneComportamento, String id) {
         try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
-             PreparedStatement stmt = conn.prepareStatement(Queries.SET_EVENT)) {
-            stmt.setString(1, tema);
-            stmt.setDate(2, data);
-            stmt.setString(3, codice);
+             PreparedStatement stmt = conn.prepareStatement(Queries.SET_BLOCKED_CLIENT)) {
+            stmt.setString(1, nome);
+            stmt.setString(2, cognome);
+            stmt.setDate(3, dataComportamentoIllecito);
+            stmt.setString(4, descrizioneComportamento);
+            stmt.setString(5, id);
             stmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
