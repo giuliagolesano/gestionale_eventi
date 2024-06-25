@@ -7,8 +7,8 @@
     <children>
         <Label fx:id="operationLabel" text="Inserisci i Dati modificati dell'Evento"/>
         <TextField fx:id="tema" promptText="Tema"/>
-        <DatePicker fx:id="Data" promptText="Data"/>
-        <TextField fx:id="id" promptText="Id Evento"/>
+        <DatePicker fx:id="DataEvento" promptText="Data"/>
+        <TextField fx:id="codice" promptText="Codice Evento"/>
         <Button text="Esegui" onAction="#executeOperation"/>
     </children>
 </VBox>

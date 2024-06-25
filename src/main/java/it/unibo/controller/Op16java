@@ -15,9 +15,9 @@ public class Op16 {
     @FXML
     private TextField tema;
     @FXML
-    private DatePicker Data;
+    private DatePicker DataEvento;
     @FXML
-    private TextField id;
+    private TextField codice;
 
     public static final String URL = "jdbc:mysql://localhost:3306/gestionale_eventi";
     public static final String USER = "root"; 
@@ -25,7 +25,7 @@ public class Op16 {
 
     @FXML
     private void executeOperation(){
-        setEvent(tema.getText(), Date.valueOf(Data.getValue()), id.getText());
+        setEvent(tema.getText(), Date.valueOf(DataEvento.getValue()), codice.getText());
     }
 
     public void setEvent(String tema, java.sql.Date data, String codice) {
