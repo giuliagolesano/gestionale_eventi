@@ -22,7 +22,7 @@ public class Op1 {
     @FXML
     private CheckBox consenso;
     @FXML    
-    private ComboBox<String> sesso;
+    private TextField sesso;
     @FXML
     private DatePicker DataNascita;
     @FXML
@@ -35,7 +35,7 @@ public class Op1 {
 
     @FXML
     private void executeOperation(){
-        addNewClient(nome.getText(), cognome.getText(), generateUniqueId() ,consenso.isSelected(),sesso.getValue(), Date.valueOf(DataNascita.getValue()), numeroTelefono.getText());
+        addNewClient(nome.getText(), cognome.getText(), generateUniqueId() ,consenso.isSelected(), sesso.getText(), Date.valueOf(DataNascita.getValue()), numeroTelefono.getText());
     }
 
     private String generateUniqueId() {
