@@ -9,20 +9,17 @@ import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import java.sql.Date;
-import java.util.UUID;
 
 public class Op11 {
-
-    @FXML
-    private DatePicker DataEvento;
+    
     @FXML
     private TextField nome;
     @FXML
     private TextField cognome;
     @FXML
-    private TextField idUnivoco;
+    private DatePicker Data;
     @FXML
-    private TextField categoria;
+    private TextField descrizioneComportamento;
 
     public static final String URL = "jdbc:mysql://localhost:3306/gestionale_eventi";
     public static final String USER = "root"; 
@@ -30,22 +27,16 @@ public class Op11 {
 
     @FXML
     private void executeOperation(){
-        addNewFreePass(Date.valueOf(DataEvento.getValue()), nome.getText(), cognome.getText(), generateUniqueId(), idUnivoco.getText(), categoria.getText());
+        addNewBlocked(nome.getText(), cognome.getText(), Date.valueOf(Data.getValue()), descrizioneComportamento.getText());
     }
 
-    private String generateUniqueId() {
-        return UUID.randomUUID().toString();
-    }
-
-    public void addNewFreePass(java.sql.Date dataEvento, String nome, String cognome, String codice, String idUnivoco, String categoriaOmaggio) {
+    public void addNewBlocked(String nome, String cognome, java.sql.Date dataComportamentoIllecito, String descrizioneComportamento) {
         try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
-             PreparedStatement stmt = conn.prepareStatement(Queries.ADD_NEW_FREE_PASS)) {
-            stmt.setDate(1, dataEvento);
-            stmt.setString(2, nome);
-            stmt.setString(3, cognome);
-            stmt.setString(4, codice);
-            stmt.setString(5, idUnivoco);
-            stmt.setString(6, categoriaOmaggio);
+             PreparedStatement stmt = conn.prepareStatement(Queries.ADD_NEW_BLOCKED)) {
+            stmt.setString(1, nome);
+            stmt.setString(2, cognome);
+            stmt.setDate(3, dataComportamentoIllecito);
+            stmt.setString(4, descrizioneComportamento);
             stmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();

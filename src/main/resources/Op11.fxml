@@ -5,12 +5,11 @@
 
 <VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="it.unibo.controller.Op11">
     <children>
-        <Label fx:id="operationLabel" text="Inserisci i Dati del Omaggio"/>
-        <DatePicker fx:id="DataEvento" promptText="Data Evento"/>
+        <Label fx:id="operationLabel" text="Inserisci i Dati del nuovo Cliente Bloccato"/>
+        <TextField fx:id="idCliente" promptText="IdClente"/>
         <TextField fx:id="nome" promptText="Nome"/>
-        <TextField fx:id="cognome" promptText="Cognome"/>
-        <DatePicker fx:id="idUnivoco" promptText="idCliente Esistente"/>
-        <TextField fx:id="categoria" promptText="categoria Omaggio"/>
+        <DatePicker fx:id="Data" promptText="Data Comportamento Illecito"/>
+        <TextField fx:id="descrizioneComportamento" promptText="Descrizione"/>
         <Button text="Esegui" onAction="#executeOperation"/>
     </children>
 </VBox>
