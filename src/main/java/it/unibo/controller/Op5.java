@@ -14,13 +14,15 @@ import java.util.UUID;
 public class Op5 {
     
     @FXML
-    private TextField nome;
+    private TextField Nome;
     @FXML
-    private TextField tipologia;
+    private TextField Tipologia;
     @FXML
-    private DatePicker DataAcquisto;
+    private DatePicker Data_Acquisto;
     @FXML
-    private DatePicker DataScadenza;
+    private DatePicker Data_Scadenza;
+    @FXML
+    private TextField Disponibilita;
 
 
     public static final String URL = "jdbc:mysql://localhost:3306/gestionale_eventi";
@@ -29,21 +31,22 @@ public class Op5 {
 
     @FXML
     private void executeOperation(){
-        addLoadDrink(generateUniqueId(), nome.getText(), tipologia.getText() , Date.valueOf(DataAcquisto.getValue()), Date.valueOf(DataScadenza.getValue()));
+        addLoadDrink(generateUniqueId(), Nome.getText(), Tipologia.getText() , Date.valueOf(Data_Acquisto.getValue()), Date.valueOf(Data_Scadenza.getValue()), Integer.parseInt(Disponibilita.getText()));
     }
 
     private String generateUniqueId() {
         return UUID.randomUUID().toString();
     }
 
-    public void addLoadDrink(String codice, String nome, String tipologia, java.sql.Date dataAcquisto, java.sql.Date dataScadenza) {
+    public void addLoadDrink(String Id, String Nome, String Tipologia, java.sql.Date Data_Acquisto, java.sql.Date Data_Scadenza, int Disponibilita) {
         try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
              PreparedStatement stmt = conn.prepareStatement(Queries.ADD_LOAD_DRINK)) {
-            stmt.setString(1, codice);
-            stmt.setString(2, nome);
-            stmt.setString(3, tipologia);
-            stmt.setDate(4, dataAcquisto);
-            stmt.setDate(5, dataScadenza);
+            stmt.setString(1, Id);
+            stmt.setString(2, Nome);
+            stmt.setString(3, Tipologia);
+            stmt.setDate(4, Data_Acquisto);
+            stmt.setDate(5, Data_Scadenza);
+            stmt.setInt(6, Disponibilita);
             stmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();

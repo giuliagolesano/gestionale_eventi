@@ -24,7 +24,7 @@ public class Queries {
     /**
      * Query for adding a new load of drinks.
      */
-    public static final String ADD_LOAD_DRINK = "INSERT INTO Bevanda (Codice, Nome, Tipologia, Data_Acquisto, Data_Scadenza) VALUES (?, ?, ?, ?, ?);";
+    public static final String ADD_LOAD_DRINK = "INSERT INTO bevanda (Id, Nome, Tipologia, Data_Acquisto, Data_Scadenza, Disponibilità) VALUES (?, ?, ?, ?, ?, ?);";
 
     /**
      * Query for adding a new list.

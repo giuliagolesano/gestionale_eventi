@@ -22,9 +22,5 @@
 
         <!-- Drop and re-create the database schema on startup -->
         <property name="hibernate.hbm2ddl.auto">update</property>
-
-        <!-- Names of the annotated entity classes -->
-        <mapping class="com.example.model.YourEntityClass"/>
-        <!-- Aggiungi qui le tue classi di entità -->
     </session-factory>
 </hibernate-configuration>
