@@ -3,14 +3,14 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="it.unibo.controller.Op14">
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="it.unibo.controller.Op13">
     <children>
-        <Label fx:id="operationLabel" text="Inserisci i Dati modificati del Cliente Bloccato"/>
-        <TextField fx:id="id" promptText="IdClente"/>
+        <Label fx:id="operationLabel" text="Inserisci i Dati modificati dell'Impiegato"/>
         <TextField fx:id="nome" promptText="Nome"/>
-        <TextField fx:id="cognome" promptText="Nome"/>
-        <DatePicker fx:id="dataComportamentoIllecito" promptText="Data Comportamento Illecito"/>
-        <TextField fx:id="descrizioneComportamento" promptText="Descrizione"/>
+        <TextField fx:id="cognome" promptText="Cognome"/>
+        <TextField fx:id="dispo" promptText="Disponibilità"/>
+        <TextField fx:id="tipo" promptText="Tipo"/>
+        <TextField fx:id="idDipendente" promptText="Id"/>
         <Button text="Esegui" onAction="#executeOperation"/>
     </children>
 </VBox>
