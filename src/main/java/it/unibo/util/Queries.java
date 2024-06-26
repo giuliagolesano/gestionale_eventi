@@ -53,7 +53,7 @@ public class Queries {
     /**
      * Query for adding a new blocked client.
      */
-    public static final String ADD_NEW_BLOCKED = "INSERT INTO ClientiBloccati (Nome, Cognome, Data_Comportamento_Illecito, Descrizione_Comportamento) VALUES (?, ?, ?, ?);";
+    public static final String ADD_NEW_BLOCKED = "INSERT INTO cliente_bloccato (Nome, Cognome, Id, id_CLIENTE, Data_Comportamento_Illecito, Descrizione_Comportamento_Illecito) VALUES (?, ?, ?, ?, ?, ?);";
 
     /**
      * Query for adding a new free pass.
