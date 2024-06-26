@@ -6,7 +6,7 @@
 <VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="it.unibo.controller.Op19">
     <children>
         <Label fx:id="operationLabel" text="Inserisci il nome del menu di cui vuoi vedere il totale delle bevande"/>
-        <TextField fx:id="id" promptText="id Menu"/>
+        <TextField fx:id="Id" promptText="id Menu"/>
         <Button text="Esegui" onAction="#executeOperation"/>
     </children>
 </VBox>

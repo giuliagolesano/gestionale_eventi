@@ -12,7 +12,7 @@ import javafx.scene.control.TextField;
 public class Op19 {
     
     @FXML
-    private TextField id;
+    private TextField Id;
 
     public static final String URL = "jdbc:mysql://localhost:3306/gestionale_eventi";
     public static final String USER = "root"; 
@@ -20,13 +20,13 @@ public class Op19 {
 
     @FXML
     private void executeOperation(){
-        viewTotalMenu(id.getText());
+        viewTotalMenu(Id.getText());
     }
     
-    public void viewTotalMenu(String id) {
+    public void viewTotalMenu(String Id) {
         try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
              PreparedStatement stmt = conn.prepareStatement(Queries.VIEW_TOTAL_MENU)) {
-            stmt.setString(1, id);
+            stmt.setString(1, Id);
             ResultSet rs = stmt.executeQuery();
             if (rs.next()) {
                 int numeroBevande = rs.getInt("Numero_di_Bevande");

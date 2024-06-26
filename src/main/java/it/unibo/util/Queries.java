@@ -58,7 +58,7 @@ public class Queries {
     /**
      * Query for adding a new free pass.
      */
-    public static final String ADD_NEW_FREE_PASS = "INSERT INTO Omaggio (Data_EVENTO, Nome, Cognome, Codice, idUnivoco, Categoria_Omaggio) VALUES (?, ?, ?, ?, ?, ?);";
+    public static final String ADD_NEW_FREE_PASS = "INSERT INTO Omaggio (Data_EVENTO, Nome, Cognome, Id, id_CLIENTE, Categoria_Omaggio) VALUES (?, ?, ?, ?, ?, ?);";
 
     /**
      * Query for updating a table.
@@ -93,7 +93,7 @@ public class Queries {
     /**
      * Query for viewing the total number of drinks in the menu.
      */
-    public static final String VIEW_TOTAL_MENU = "SELECT Numero_di_Bevande FROM Menu WHERE Id = ?;";
+    public static final String VIEW_TOTAL_MENU = "SELECT Numero_di_Bevande FROM menu WHERE Id = ?;";
 
     /**
      * Query for getting the top 10 most requested drinks.

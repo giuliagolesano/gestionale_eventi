@@ -14,15 +14,15 @@ import java.util.UUID;
 public class Op12 {
     
     @FXML
-    private DatePicker DataEvento;
+    private DatePicker Data_EVENTO;
     @FXML
-    private TextField nome;
+    private TextField Nome;
     @FXML
-    private TextField cognome;
+    private TextField Cognome;
     @FXML
-    private TextField idUnivoco;
+    private TextField id_CLIENTE;
     @FXML
-    private TextField categoria;
+    private TextField Categoria_Omaggio;
 
     public static final String URL = "jdbc:mysql://localhost:3306/gestionale_eventi";
     public static final String USER = "root"; 
@@ -30,7 +30,7 @@ public class Op12 {
 
     @FXML
     private void executeOperation(){
-        addNewFreePass(Date.valueOf(DataEvento.getValue()), nome.getText(), cognome.getText(), generateUniqueId(), idUnivoco.getText(), categoria.getText());
+        addNewFreePass(Date.valueOf(Data_EVENTO.getValue()), Nome.getText(), Cognome.getText(), generateUniqueId(), id_CLIENTE.getText(), Categoria_Omaggio.getText());
     }
 
     private String generateUniqueId() {
