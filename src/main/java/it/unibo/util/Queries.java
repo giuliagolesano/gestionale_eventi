@@ -38,7 +38,7 @@ public class Queries {
     /**
      * Query for adding a new presale.
      */
-    public static final String ADD_NEW_PRESALE = "INSERT INTO Prevendita_Generica (Data_EVENTO, Id, Id_CLIENTE, Costo, Data_Acquisto, Metodo_Pagamento) VALUES (?, ?, ?, ?, ?, ?);";
+    public static final String ADD_NEW_PRESALE = "INSERT INTO prevendita_generica (Data_EVENTO, Id, id_CLIENTE, Costo, Data_Acquisto, Metodo_Pagamento) VALUES (?, ?, ?, ?, ?, ?);";
 
     /**
      * Query for adding a client to a table.

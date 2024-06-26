@@ -6,11 +6,11 @@
 <VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="it.unibo.controller.Op8">
     <children>
         <Label fx:id="operationLabel" text="Inserisci i Dati della nuova prevendita"/>
-        <DatePicker fx:id="DataEvento" promptText="Data Evento"/>
-        <TextField fx:id="idCliente" promptText="idCliente"/>
-        <TextField fx:id="costo" promptText="costo"/>
-        <DatePicker fx:id="DataAcquisto" promptText="Data di Oggi"/>
-        <TextField fx:id="metodoPagamento" promptText="Pagamento (Online/Botteghino)"/>
+        <DatePicker fx:id="Data_EVENTO" promptText="Data Evento"/>
+        <TextField fx:id="id_CLIENTE" promptText="idCliente"/>
+        <TextField fx:id="Costo" promptText="costo"/>
+        <DatePicker fx:id="Data_Acquisto" promptText="Data di Oggi"/>
+        <TextField fx:id="Metodo_Pagamento" promptText="Pagamento (Online/Botteghino)"/>
         <Button text="Esegui" onAction="#executeOperation"/>
     </children>
 </VBox>

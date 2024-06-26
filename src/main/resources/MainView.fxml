@@ -21,7 +21,7 @@
     <Button text="Registrazione di un nuovo Tavolo da un PR" onAction="#handleOp7" style="-fx-font-size: 12px;" fx:id="btnOp7"/>
     <Button text="Iscrizione di un Cliente ad una Prevendita" onAction="#handleOp8" style="-fx-font-size: 12px;" fx:id="btnOp8"/>
     <Button text="Iscrizione di un Cliente ad un Tavolo" onAction="#handleOp9" style="-fx-font-size: 12px;" fx:id="btnOp9"/>
-    <Button text= "Iscrizione di un Cliente ad una Lista" onAction="#handleOp10" style="-fx-font-size: 12px;" fx:id="btnOp10"/>
+    <Button text="Iscrizione di un Cliente ad una Lista" onAction="#handleOp10" style="-fx-font-size: 12px;" fx:id="btnOp10"/>
     <Button text="Iscrizione di un nuovo Cliente Bloccato" onAction="#handleOp11" style="-fx-font-size: 12px;" fx:id="btnOp11"/>
     <Button text="Iscrizione di un nuovo Omaggio" onAction="#handleOp12" style="-fx-font-size: 12px;" fx:id="btnOp12"/>
     <Button text="Modifica dei dati di un Tavolo già registrato" onAction="#handleOp13" style="-fx-font-size: 12px;" fx:id="btnOp13"/>

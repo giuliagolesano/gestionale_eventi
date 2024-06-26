@@ -14,15 +14,15 @@ import java.util.UUID;
 public class Op8 {
 
     @FXML
-    private DatePicker DataEvento;
+    private DatePicker Data_EVENTO;
     @FXML
-    private TextField idCliente;
+    private TextField id_CLIENTE;
     @FXML
-    private TextField costo;
+    private TextField Costo;
     @FXML
-    private DatePicker DataAcquisto;
+    private DatePicker Data_Acquisto;
     @FXML
-    private TextField metodoPagamento;
+    private TextField Metodo_Pagamento;
 
     public static final String URL = "jdbc:mysql://localhost:3306/gestionale_eventi";
     public static final String USER = "root"; 
@@ -30,22 +30,22 @@ public class Op8 {
 
     @FXML
     private void executeOperation(){
-        addNewPresale(Date.valueOf(DataEvento.getValue()), generateUniqueId(), idCliente.getText(), Integer.parseInt(costo.getText()), Date.valueOf(DataAcquisto.getValue()), metodoPagamento.getText());
+        addNewPresale(Date.valueOf(Data_EVENTO.getValue()), generateUniqueId(), id_CLIENTE.getText(), Integer.parseInt(Costo.getText()), Date.valueOf(Data_Acquisto.getValue()), Metodo_Pagamento.getText());
     }
 
     private String generateUniqueId() {
         return UUID.randomUUID().toString();
     }
 
-    public void addNewPresale(java.sql.Date dataEvento, String id, String idCliente, int costo, java.sql.Date dataAcquisto, String metodoPagamento) {
+    public void addNewPresale(java.sql.Date Data_EVENTO, String Id, String id_CLIENTE, int Costo, java.sql.Date Data_Acquisto, String Metodo_Pagamento) {
         try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
              PreparedStatement stmt = conn.prepareStatement(Queries.ADD_NEW_PRESALE)) {
-            stmt.setDate(1, dataEvento);
-            stmt.setString(2, id);
-            stmt.setString(3, idCliente);
-            stmt.setInt(4, costo);
-            stmt.setDate(5, dataAcquisto);
-            stmt.setString(6, metodoPagamento);
+            stmt.setDate(1, Data_EVENTO);
+            stmt.setString(2, Id);
+            stmt.setString(3, id_CLIENTE);
+            stmt.setInt(4, Costo);
+            stmt.setDate(5, Data_Acquisto);
+            stmt.setString(6, Metodo_Pagamento);
             stmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
