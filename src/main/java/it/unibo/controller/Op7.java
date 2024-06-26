@@ -12,17 +12,20 @@ import java.sql.Date;
 import java.util.UUID;
 
 public class Op7 {
-    
     @FXML
-    private TextField nome;
+    private DatePicker Data_EVENTO;
     @FXML
-    private TextField password;    
+    private TextField Nome;
     @FXML
-    private DatePicker DataEvento;
+    private TextField Password;    
     @FXML
-    private TextField costo;
+    private TextField Costo_per_Partecipante;
     @FXML
-    private TextField posizione;
+    private TextField Posizione;
+    @FXML
+    private TextField id_PR;
+    @FXML
+    private TextField Numero_Partecipanti;
 
 
     public static final String URL = "jdbc:mysql://localhost:3306/gestionale_eventi";
@@ -31,22 +34,19 @@ public class Op7 {
 
     @FXML
     private void executeOperation(){
-        addNewTable(Date.valueOf(DataEvento.getValue()), nome.getText(), password.getText(), Integer.parseInt(costo.getText()), posizione.getText(), generateUniqueId());
+        addNewTable(Date.valueOf(Data_EVENTO.getValue()), Nome.getText(), Password.getText(), Integer.parseInt(Costo_per_Partecipante.getText()), Posizione.getText(), id_PR.getText(), Integer.parseInt(Numero_Partecipanti.getText()));
     }
 
-    private String generateUniqueId() {
-        return UUID.randomUUID().toString();
-    }
-
-    public void addNewTable(java.sql.Date dataEvento, String nome, String password, int costoPerPartecipante, String posizione, String idUnivocoPR) {
+    public void addNewTable(java.sql.Date Data_EVENTO, String Nome, String Password, int Costo_per_Partecipante, String Posizione, String id_PR, int Numero_Partecipanti) {
         try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
              PreparedStatement stmt = conn.prepareStatement(Queries.ADD_NEW_TABLE)) {
-            stmt.setDate(1, dataEvento);
-            stmt.setString(2, nome);
-            stmt.setString(3, password);
-            stmt.setInt(4, costoPerPartecipante);
-            stmt.setString(5, posizione);
-            stmt.setString(6, idUnivocoPR);
+            stmt.setDate(1, Data_EVENTO);
+            stmt.setString(2, Nome);
+            stmt.setString(3, Password);
+            stmt.setInt(4, Costo_per_Partecipante);
+            stmt.setString(5, Posizione);
+            stmt.setString(6, id_PR);
+            stmt.setInt(7, Numero_Partecipanti);
             stmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();

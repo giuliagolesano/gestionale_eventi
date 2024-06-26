@@ -11,19 +11,19 @@ import javafx.scene.control.TextField;
 import java.sql.Date;
 
 public class Op13 {
-    
+
     @FXML
-    private TextField nome;
+    private TextField Password;    
     @FXML
-    private TextField password;    
+    private TextField Costo_per_Partecipante;
     @FXML
-    private TextField costo;
+    private TextField Posizione;
     @FXML
-    private TextField posizione;
+    private TextField id_PR;
     @FXML
-    private TextField idPR;
+    private DatePicker Data_EVENTO;
     @FXML
-    private DatePicker DataEvento;
+    private TextField Nome;
 
     public static final String URL = "jdbc:mysql://localhost:3306/gestionale_eventi";
     public static final String USER = "root"; 
@@ -31,19 +31,18 @@ public class Op13 {
 
     @FXML
     private void executeOperation(){
-        setTable(nome.getText(), password.getText(), Integer.parseInt(costo.getText()), posizione.getText(), idPR.getText(), Date.valueOf(DataEvento.getValue()));
+        setTable(Nome.getText(), Password.getText(), Integer.parseInt(Costo_per_Partecipante.getText()), Posizione.getText(), id_PR.getText(), Date.valueOf(Data_EVENTO.getValue()));
     }
 
-    public void setTable(String nome, String password, int costoPerPartecipante, String posizione, String idPR, java.sql.Date dataEvento) {
+    public void setTable(String Nome, String Password, int Costo_per_Partecipante, String Posizione, String id_PR, java.sql.Date Data_EVENTO) {
         try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
              PreparedStatement stmt = conn.prepareStatement(Queries.SET_TABLE)) {
-            stmt.setString(1, nome);
-            stmt.setString(2, password);
-            stmt.setInt(3, costoPerPartecipante);
-            stmt.setString(4, posizione);
-            stmt.setString(5, idPR);
-            stmt.setDate(6, dataEvento);
-            stmt.setString(7, nome);
+            stmt.setString(2, Password);
+            stmt.setInt(3, Costo_per_Partecipante);
+            stmt.setString(4, Posizione);
+            stmt.setString(5, id_PR);
+            stmt.setDate(6, Data_EVENTO);
+            stmt.setString(7, Nome);
             stmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();

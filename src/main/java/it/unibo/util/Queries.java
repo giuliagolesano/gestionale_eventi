@@ -33,7 +33,7 @@ public class Queries {
     /**
      * Query for adding a new table by a PR.
      */
-    public static final String ADD_NEW_TABLE = "INSERT INTO Tavolo (Data_EVENTO, Nome, Password, Costo_per_Partecipante, Posizione, idUnivoco_PR) VALUES (?, ?, ?, ?, ?, ?);";
+    public static final String ADD_NEW_TABLE = "INSERT INTO tavolo (Data_EVENTO, Nome, Password, Costo_per_Partecipante, Posizione, id_PR, Numero_Partecipanti) VALUES (?, ?, ?, ?, ?, ?, ?);";
 
     /**
      * Query for adding a new presale.
@@ -63,7 +63,7 @@ public class Queries {
     /**
      * Query for updating a table.
      */
-    public static final String SET_TABLE = "UPDATE Tavolo SET Nome = ?, Password = ?, Costo_per_Partecipante = ?, Posizione = ?, id_PR = ? WHERE Data_EVENTO = ? AND Nome = ?;";
+    public static final String SET_TABLE = "UPDATE tavolo SET Password = ?, Costo_per_Partecipante = ?, Posizione = ?, id_PR = ? WHERE Data_EVENTO = ? AND Nome = ?;";
 
     /**
      * Query for updating an employee.

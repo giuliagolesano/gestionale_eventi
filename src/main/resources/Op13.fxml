@@ -6,12 +6,12 @@
 <VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="it.unibo.controller.Op13">
     <children>
         <Label fx:id="operationLabel" text="Inserisci i Dati modificati del Tavolo"/>
-        <TextField fx:id="nome" promptText="Nome"/>
-        <TextField fx:id="password" promptText="Password"/>
-        <TextField fx:id="costo" promptText="Costo per Partecipante"/>
-        <TextField fx:id="posizione" promptText="Posizione nel Locale"/>
-        <TextField fx:id="idPR" promptText="idPR"/>
-        <DatePicker fx:id="DataEvento" promptText="Data Evento"/>
+        <TextField fx:id="Password" promptText="Password"/>
+        <TextField fx:id="Costo" promptText="Costo per Partecipante"/>
+        <TextField fx:id="Posizione" promptText="Posizione nel Locale"/>
+        <TextField fx:id="id_PR" promptText="idPR"/>
+        <DatePicker fx:id="Data_EVENTO" promptText="Data Evento"/>
+        <TextField fx:id="Nome" promptText="Nome"/>
         <Button text="Esegui" onAction="#executeOperation"/>
     </children>
 </VBox>

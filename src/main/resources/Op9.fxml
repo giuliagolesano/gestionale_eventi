@@ -6,9 +6,9 @@
 <VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="it.unibo.controller.Op9">
     <children>
         <Label fx:id="operationLabel" text="Inserisci i Dati del Cliente e del Tavolo"/>
+        <DatePicker fx:id="Data_EVENTO" promptText="Data Evento"/>
+        <TextField fx:id="Nome" promptText="Nome Tavolo"/>
         <TextField fx:id="idCliente" promptText="IdClente"/>
-        <TextField fx:id="nome" promptText="Nome Tavolo"/>
-        <DatePicker fx:id="DataEvento" promptText="Data Evento"/>
         <Button text="Esegui" onAction="#executeOperation"/>
     </children>
 </VBox>
