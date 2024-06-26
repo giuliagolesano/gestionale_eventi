@@ -43,12 +43,12 @@ public class Queries {
     /**
      * Query for adding a client to a table.
      */
-    public static final String ADD_CLIENT_TABLE = "INSERT INTO PartecipantiTavolo (id_CLIENTE, Nome_TAVOLO, Data_EVENTO) VALUES (?, ?, ?);";
+    public static final String ADD_CLIENT_TABLE = "";
 
     /**
      * Query for adding a client to a list.
      */
-    public static final String ADD_CLIENT_LIST = "INSERT INTO IscrizioniLista (id_CLIENTE, Nome_LISTA, Data_EVENTO, Data_Iscrizione) VALUES (?, ?, ?, ?);";
+    public static final String ADD_CLIENT_LIST = "";
 
     /**
      * Query for adding a new blocked client.
@@ -58,7 +58,7 @@ public class Queries {
     /**
      * Query for adding a new free pass.
      */
-    public static final String ADD_NEW_FREE_PASS = "INSERT INTO Omaggio (Data_EVENTO, Nome, Cognome, Id, id_CLIENTE, Categoria_Omaggio) VALUES (?, ?, ?, ?, ?, ?);";
+    public static final String ADD_NEW_FREE_PASS = "INSERT INTO omaggio (Data_EVENTO, Nome, Cognome, Id, id_CLIENTE, Categoria_Omaggio) VALUES (?, ?, ?, ?, ?, ?);";
 
     /**
      * Query for updating a table.
@@ -73,7 +73,7 @@ public class Queries {
     /**
      * Query for updating a blocked client.
      */
-    public static final String SET_BLOCKED_CLIENT = "UPDATE Cliente_bloccato SET Nome = ?, Cognome = ?, Data_Comportamento_Illecito = ?, Descrizione_Comportamento = ? WHERE Id = ?;";
+    public static final String SET_BLOCKED_CLIENT = "UPDATE cliente_bloccato SET Nome = ?, Cognome = ?, Data_Comportamento_Illecito = ?, Descrizione_Comportamento_Illecito = ? WHERE Id = ?;";
 
     /**
      * Query for updating an event.
