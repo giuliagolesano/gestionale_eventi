@@ -8,7 +8,7 @@ public class Queries {
     /**
      * Query for adding a new event.
      */
-    public static final String ADD_NEW_EVENT = "INSERT INTO Evento (Data, Tema) VALUES (?, ?);";
+    public static final String ADD_NEW_EVENT = "INSERT INTO evento (Data, Tema) VALUES (?, ?);";
 
     /**
      * Query for adding a new event.
