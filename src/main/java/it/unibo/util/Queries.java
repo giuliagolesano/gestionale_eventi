@@ -18,7 +18,7 @@ public class Queries {
     /**
      * Query for adding an employee to an event.
      */
-    public static final String ADD_EMPLOYEE_EVENT = "INSERT INTO Impiegati (DataEvento, idUnivoco) VALUES (?, ?);";
+    public static final String ADD_EMPLOYEE_EVENT = "INSERT INTO impiegati_evento (id_DIPENDENTE, Data_EVENTO) VALUES (?, ?);";
 
     /**
      * Query for adding a new load of drinks.

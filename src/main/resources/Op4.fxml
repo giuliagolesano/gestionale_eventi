@@ -6,8 +6,8 @@
 <VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="it.unibo.controller.Op4">
     <children>
         <Label fx:id="operationLabel" text="Inserisci i Dati dell'Evento e dell'Impiegato"/>
-        <DatePicker fx:id="Data" promptText="Data"/>
-        <TextField fx:id="Id" promptText="Codice Impiegato"/>
+        <TextField fx:id="id_DIPENDENTE" promptText="Codice Impiegato"/>
+        <DatePicker fx:id="Data_EVENTO" promptText="Data"/>
         <Button text="Esegui" onAction="#executeOperation"/>
     </children>
 </VBox>

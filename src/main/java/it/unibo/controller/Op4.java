@@ -13,9 +13,9 @@ import java.sql.Date;
 public class Op4 {
     
     @FXML
-    private DatePicker Data;
+    private TextField id_DIPENDENTE;
     @FXML
-    private TextField Id;
+    private DatePicker Data_EVENTO;
 
     public static final String URL = "jdbc:mysql://localhost:3306/gestionale_eventi";
     public static final String USER = "root"; 
@@ -23,15 +23,15 @@ public class Op4 {
 
     @FXML
     private void executeOperation(){
-        addEmployeeToEvent(Date.valueOf(Data.getValue()), Id.getText());
+        addEmployeeToEvent(id_DIPENDENTE.getText(), Date.valueOf(Data_EVENTO.getValue()));
     }
     
-    public void addEmployeeToEvent(java.sql.Date dataEvento, String idUnivoco) {
+    public void addEmployeeToEvent(String id_DIPENDENTE, java.sql.Date Data_EVENTO) {
         try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
              PreparedStatement stmt = conn.prepareStatement(Queries.ADD_EMPLOYEE_EVENT)) {
-            stmt.setDate(1, dataEvento);
-            stmt.setString(2, idUnivoco);
-            stmt.executeUpdate();
+                stmt.setString(1, id_DIPENDENTE);
+                stmt.setDate(2, Data_EVENTO);
+                stmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         }
