@@ -6,16 +6,22 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import it.unibo.util.Queries;
 import javafx.fxml.FXML;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
+import java.sql.Date;
 
 public class Op6 {
     
     @FXML
-    private TextField nome;
+    private DatePicker Data_EVENTO;
     @FXML
-    private TextField costoAdesione;
+    private TextField Nome;
     @FXML
-    private TextField numeroPartecipanti;
+    private TextField Costo_Adesione;
+    @FXML
+    private DatePicker Data_Iscrizione;
+    @FXML
+    private TextField Numero_Iscrizioni;
 
 
     public static final String URL = "jdbc:mysql://localhost:3306/gestionale_eventi";
@@ -24,15 +30,16 @@ public class Op6 {
 
     @FXML
     private void executeOperation(){
-        addNewList(nome.getText(), Integer.parseInt(costoAdesione.getText()), Integer.parseInt(numeroPartecipanti.getText()));
+        addNewList(Date.valueOf(Data_EVENTO.getValue()), Nome.getText(), Integer.parseInt(Costo_Adesione.getText()), Integer.parseInt(Numero_Iscrizioni.getText()));
     }
 
-    public void addNewList(String nome, int costoAdesione, int numeroPartecipanti) {
+    public void addNewList(Date Data_EVENTO, String Nome, int Costo_Adesione, int Numero_Iscrizioni) {
         try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
              PreparedStatement stmt = conn.prepareStatement(Queries.ADD_NEW_LIST)) {
-            stmt.setString(1, nome);
-            stmt.setInt(2, costoAdesione);
-            stmt.setInt(3, numeroPartecipanti);
+            stmt.setDate(1, Data_EVENTO);
+            stmt.setString(2, Nome);
+            stmt.setInt(3, Costo_Adesione);
+            stmt.setInt(4, Numero_Iscrizioni);
             stmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();

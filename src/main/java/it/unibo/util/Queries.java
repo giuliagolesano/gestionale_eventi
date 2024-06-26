@@ -28,7 +28,7 @@ public class Queries {
     /**
      * Query for adding a new list.
      */
-    public static final String ADD_NEW_LIST = "INSERT INTO Lista (Nome, Costo_Adesione, Numero_Partecipanti) VALUES (?, ?, ?);";
+    public static final String ADD_NEW_LIST = "INSERT INTO lista (Data_EVENTO, Nome, Costo_Adesione, Data_Iscrizione, Numero_Iscrizioni) VALUES (?, ?, ?, ?, ?);";
 
     /**
      * Query for adding a new table by a PR.
