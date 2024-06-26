@@ -11,13 +11,13 @@ import javafx.scene.control.TextField;
 public class Op14 {
     
     @FXML
-    private TextField nome;
+    private TextField Nome;
     @FXML
-    private TextField cognome;
+    private TextField Cognome;
     @FXML
-    private TextField dispo;
+    private TextField Disponibilita;
     @FXML
-    private TextField tipo;
+    private TextField Tipo;
     @FXML
     private TextField idDipendente;
  
@@ -27,7 +27,7 @@ public class Op14 {
 
     @FXML
     private void executeOperation(){
-        setEmployee(nome.getText(), cognome.getText(), dispo.getText(), tipo.getText(), idDipendente.getText());
+        setEmployee(Nome.getText(), Cognome.getText(), Disponibilita.getText(), Tipo.getText(), idDipendente.getText());
     }
 
     public void setEmployee(String nome, String cognome, String disponibilita, String tipo, String id) {

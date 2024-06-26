@@ -13,7 +13,7 @@ public class Queries {
     /**
      * Query for adding a new event.
      */
-    public static final String ADD_NEW_EMPLOYEE = "INSERT INTO Dipendente (Disponibilità, Nome, Cognome,  Id, Tipo) VALUES (?, ?, ?, ?, ?);";
+    public static final String ADD_NEW_EMPLOYEE = "INSERT INTO dipendente (Disponibilità, Nome, Cognome,  Id, Tipo) VALUES (?, ?, ?, ?, ?);";
 
     /**
      * Query for adding an employee to an event.
@@ -68,7 +68,7 @@ public class Queries {
     /**
      * Query for updating an employee.
      */
-    public static final String SET_EMPLOYEE = "UPDATE Dipendente SET Nome = ?, Cognome = ?, Disponibilita = ?, Tipo = ? WHERE id = ?;";
+    public static final String SET_EMPLOYEE = "UPDATE dipendente SET Nome = ?, Cognome = ?, Disponibilita = ?, Tipo = ? WHERE id = ?;";
 
     /**
      * Query for updating a blocked client.
