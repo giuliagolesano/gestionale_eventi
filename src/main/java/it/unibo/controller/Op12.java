@@ -34,7 +34,8 @@ public class Op12 {
     }
 
     private String generateUniqueId() {
-        return UUID.randomUUID().toString();
+        String uuid = UUID.randomUUID().toString();
+        return uuid.length() > 30 ? uuid.substring(0, 30) : uuid;
     }
 
     public void addNewFreePass(java.sql.Date dataEvento, String nome, String cognome, String codice, String idUnivoco, String categoriaOmaggio) {

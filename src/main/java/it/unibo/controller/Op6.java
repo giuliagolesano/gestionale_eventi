@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import it.unibo.util.Queries;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import java.sql.Date;
@@ -30,19 +31,38 @@ public class Op6 {
 
     @FXML
     private void executeOperation(){
-        addNewList(Date.valueOf(Data_EVENTO.getValue()), Nome.getText(), Integer.parseInt(Costo_Adesione.getText()), Integer.parseInt(Numero_Iscrizioni.getText()));
+        addNewList(Date.valueOf(Data_EVENTO.getValue()), Nome.getText(), Integer.parseInt(Costo_Adesione.getText()), Date.valueOf(Data_Iscrizione.getValue()), Integer.parseInt(Numero_Iscrizioni.getText()));
     }
 
-    public void addNewList(Date Data_EVENTO, String Nome, int Costo_Adesione, int Numero_Iscrizioni) {
+    public void addNewList(Date Data_EVENTO, String Nome, int Costo_Adesione, Date Data_Iscrizione, int Numero_Iscrizioni) {
         try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
              PreparedStatement stmt = conn.prepareStatement(Queries.ADD_NEW_LIST)) {
             stmt.setDate(1, Data_EVENTO);
             stmt.setString(2, Nome);
             stmt.setInt(3, Costo_Adesione);
-            stmt.setInt(4, Numero_Iscrizioni);
+            stmt.setDate(4, Data_Iscrizione);
+            stmt.setInt(5, Numero_Iscrizioni);
             stmt.executeUpdate();
+        showConfirmation("Dati inseriti correttamente.");
         } catch (SQLException e) {
             e.printStackTrace();
+            showError("Operation failed: " + e.getMessage());
         }
+    }
+
+    private void showConfirmation(String message) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Success");
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
+    }
+
+    private void showError(String message) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Error");
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
     }
 }

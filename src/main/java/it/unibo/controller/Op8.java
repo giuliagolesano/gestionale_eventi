@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import it.unibo.util.Queries;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import java.sql.Date;
@@ -34,7 +35,8 @@ public class Op8 {
     }
 
     private String generateUniqueId() {
-        return UUID.randomUUID().toString();
+        String uuid = UUID.randomUUID().toString();
+        return uuid.length() > 30 ? uuid.substring(0, 30) : uuid;
     }
 
     public void addNewPresale(java.sql.Date Data_EVENTO, String Id, String id_CLIENTE, int Costo, java.sql.Date Data_Acquisto, String Metodo_Pagamento) {
@@ -47,8 +49,26 @@ public class Op8 {
             stmt.setDate(5, Data_Acquisto);
             stmt.setString(6, Metodo_Pagamento);
             stmt.executeUpdate();
+        showConfirmation("Dati inseriti correttamente.");
         } catch (SQLException e) {
             e.printStackTrace();
+            showError("Operation failed: " + e.getMessage());
         }
+    }
+
+    private void showConfirmation(String message) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Success");
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
+    }
+
+    private void showError(String message) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Error");
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
     }
 }

@@ -13,7 +13,7 @@ public class Queries {
     /**
      * Query for adding a new event.
      */
-    public static final String ADD_NEW_EMPLOYEE = "INSERT INTO dipendente (Disponibilità, Nome, Cognome,  Id, Tipo) VALUES (?, ?, ?, ?, ?);";
+    public static final String ADD_NEW_EMPLOYEE = "INSERT INTO dipendente (Disponibilita, Nome, Cognome,  Id, Tipo) VALUES (?, ?, ?, ?, ?);";
 
     /**
      * Query for adding an employee to an event.
@@ -23,7 +23,7 @@ public class Queries {
     /**
      * Query for adding a new load of drinks.
      */
-    public static final String ADD_LOAD_DRINK = "INSERT INTO bevanda (Id, Nome, Tipologia, Data_Acquisto, Data_Scadenza, Disponibilità) VALUES (?, ?, ?, ?, ?, ?);";
+    public static final String ADD_LOAD_DRINK = "INSERT INTO bevanda (Id, Nome, Tipologia, Data_Acquisto, Data_Scadenza, Disponibilita) VALUES (?, ?, ?, ?, ?, ?);";
 
     /**
      * Query for adding a new list.

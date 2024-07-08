@@ -34,7 +34,8 @@ public class Op11 {
     }
 
     private String generateUniqueId() {
-        return UUID.randomUUID().toString();
+        String uuid = UUID.randomUUID().toString();
+        return uuid.length() > 30 ? uuid.substring(0, 30) : uuid;
     }
 
     public void addNewBlocked(String Nome, String Cognome, String Id, String id_CLIENTE, java.sql.Date Data_Comportamento_Illecito, String Descrizione_Comportamento_Illecito) {

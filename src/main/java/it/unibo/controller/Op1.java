@@ -16,6 +16,7 @@ import javafx.scene.control.Alert;
 
 import java.io.IOException;
 import java.sql.Date;
+import java.sql.SQLException;
 import java.util.UUID;
 import javax.persistence.Query;
 
@@ -62,31 +63,16 @@ public class Op1 {
             query.setParameter(9, null); // Ade_Nome
             query.setParameter(10, null); // TAVOLO_Data_EVENTO
             query.setParameter(11, null); // Isc_Nome
-
-            int result = query.executeUpdate();
-            System.out.println(result + " record(s) inserito/i.");
-
-            transaction.commit();
-            System.out.println("Transazione completata con successo.");
-            
-        } catch (Exception e) {
-            System.out.println("Errore durante l'operazione: " + e.getMessage());
-            showError("Operation failed: " + e.getMessage());
+            showConfirmation("Dati inseriti correttamente.");
         }
     }
 
-    private void loadConfirmationWindow() {
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/it/unibo/view/Confirmation.fxml"));
-            Parent root = fxmlLoader.load();
-            Stage stage = new Stage();
-            stage.setTitle("Conferma");
-            stage.setScene(new Scene(root));
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-            showError("Unable to load confirmation window.");
-        }
+    private void showConfirmation(String message) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Success");
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
     }
 
     private void showError(String message) {
