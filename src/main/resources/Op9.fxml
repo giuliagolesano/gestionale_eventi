@@ -8,7 +8,7 @@
         <Label fx:id="operationLabel" text="Inserisci i Dati del Cliente e del Tavolo"/>
         <DatePicker fx:id="Data_EVENTO" promptText="Data Evento"/>
         <TextField fx:id="Nome" promptText="Nome Tavolo"/>
-        <TextField fx:id="idCliente" promptText="IdClente"/>
+        <TextField fx:id="idCliente" promptText="IdCliente"/>
         <Button text="Esegui" onAction="#executeOperation"/>
     </children>
 </VBox>

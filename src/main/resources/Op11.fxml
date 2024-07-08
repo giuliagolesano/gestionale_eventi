@@ -8,7 +8,7 @@
         <Label fx:id="operationLabel" text="Inserisci i Dati del nuovo Cliente Bloccato"/>
         <TextField fx:id="Nome" promptText="Nome"/>
         <TextField fx:id="Cognome" promptText="Cognome"/>
-        <TextField fx:id="id_CLIENTE" promptText="Identificativo Clente"/>
+        <TextField fx:id="id_CLIENTE" promptText="Identificativo Cliente"/>
         <DatePicker fx:id="Data_Comportamento_Illecito" promptText="Data Comportamento Illecito"/>
         <TextField fx:id="Descrizione_Comportamento_Illecito" promptText="Descrizione"/>
         <Button text="Esegui" onAction="#executeOperation"/>

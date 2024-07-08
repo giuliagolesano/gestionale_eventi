@@ -103,10 +103,10 @@ public class Queries {
     /**
      * Query for getting the table present at the most events.
      */
-    public static final String BEST_TABLE = "SELECT Tavolo.Nome, COUNT(*) as NumeroEventi FROM Tavolo GROUP BY Tavolo.Nome ORDER BY NumeroEventi DESC LIMIT 1;";
+    public static final String BEST_TABLE = "SELECT tavolo.Nome, COUNT(*) as NumeroEventi FROM Tavolo GROUP BY Tavolo.Nome ORDER BY NumeroEventi DESC LIMIT 1;";
 
     /**
      * Query for getting the PR that generated the most revenue.
      */
-    public static final String BEST_PR = "SELECT DIPENDENTE.Nome, DIPENDENTE.Cognome, SUM(TAVOLO.Costo_per_Partecipante * TAVOLO.Numero_Partecipanti) AS IncassoTotale FROM DIPENDENTE JOIN TAVOLO ON DIPENDENTE.id = TAVOLO.id_PR WHERE DIPENDENTE.id IN (SELECT id FROM PUBBLICHE_RELAZIONI) GROUP BY DIPENDENTE.Nome, DIPENDENTE.Cognome ORDER BY IncassoTotale DESC LIMIT 1;";
+    public static final String BEST_PR = "SELECT dipendente.Nome, DIPENDENTE.Cognome, SUM(tavolo.Costo_per_Partecipante * tavolo.Numero_Partecipanti) AS IncassoTotale FROM dipendente JOIN tavolo ON dipendente.id = tavolo.id_PR WHERE dipendente.id IN (SELECT id FROM pubbliche_relazioni) GROUP BY dipendente.Nome, dipendente.Cognome ORDER BY IncassoTotale DESC LIMIT 1;";
 }
