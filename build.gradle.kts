@@ -4,10 +4,6 @@ plugins {
 
     // Apply the application plugin to add support for building a CLI application
     id("application")
-
-    // Adds tasks to export a runnable jar
-    id("com.github.johnrengelman.shadow") version "8.1.1"
-    id("org.danilopianini.gradle-java-qa") version "1.36.0"
 }
 
 repositories {

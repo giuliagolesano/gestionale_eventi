@@ -9,7 +9,7 @@
         <TextField fx:id="Nome" promptText="Nome"/>
         <TextField fx:id="Cognome" promptText="Cognome"/>
         <CheckBox fx:id="Consenso" text="Consenso"/>
-        <TextField fx:id="Sesso" promptText="Sesso (Maschio o Femmina)"/>
+        <TextField fx:id="Sesso" promptText="Sesso (M o F)"/>
         <DatePicker fx:id="Data_Nascita" promptText="Data di Nascita"/>
         <TextField fx:id="Numero_Telefono" promptText="Numero di Telefono"/>
         <Button text="Esegui" onAction="#executeOperation"/>

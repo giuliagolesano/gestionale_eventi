@@ -35,7 +35,8 @@ public class Op1 {
     }
 
     private String generateUniqueId() {
-        return UUID.randomUUID().toString();
+        String uuid = UUID.randomUUID().toString();
+        return uuid.length() > 30 ? uuid.substring(0, 30) : uuid;
     }
 
     public void addNewClient(String nome, String cognome, String id, boolean consenso, String sesso, Date dataNascita, String numeroTelefono ) {
@@ -52,6 +53,10 @@ public class Op1 {
             query.setParameter(5, sesso);
             query.setParameter(6, dataNascita);
             query.setParameter(7, numeroTelefono);
+            query.setParameter(8, null); // LISTA_Data_EVENTO
+            query.setParameter(9, null); // Ade_Nome
+            query.setParameter(10, null); // TAVOLO_Data_EVENTO
+            query.setParameter(11, null); // Isc_Nome
 
             int result = query.executeUpdate();
             System.out.println(result + " record(s) inserito/i.");
@@ -59,10 +64,6 @@ public class Op1 {
             transaction.commit();
             System.out.println("Transazione completata con successo.");
         } catch (Exception e) {
-            if (transaction != null) {
-                transaction.rollback();
-                System.out.println("Transazione annullata.");
-            }
             System.out.println("Errore durante l'operazione: " + e.getMessage());
             showError("Operation failed: " + e.getMessage());
         }
