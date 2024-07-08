@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.zip.Adler32;
+
 import it.unibo.util.Queries;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -14,13 +16,11 @@ import java.sql.Date;
 public class Op10 {
     
     @FXML
-    private TextField idCliente;
+    private TextField ID;
     @FXML
-    private TextField nome;
+    private TextField Isc_Nome;
     @FXML
-    private DatePicker DataEvento;
-    @FXML
-    private DatePicker DataIscrizione;
+    private DatePicker LISTA_Data_EVENTO;
 
     public static final String URL = "jdbc:mysql://localhost:3306/gestionale_eventi";
     public static final String USER = "root"; 
@@ -28,16 +28,15 @@ public class Op10 {
 
     @FXML
     private void executeOperation(){
-        addClientToList(idCliente.getText(), nome.getText(), Date.valueOf(DataEvento.getValue()), Date.valueOf(DataIscrizione.getValue()));
+        addClientToList(ID.getText(), Isc_Nome.getText(), Date.valueOf(LISTA_Data_EVENTO.getValue()));
     }
 
-    public void addClientToList(String idCliente, String nomeLista, java.sql.Date dataEvento, java.sql.Date dataIscrizione) {
+    public void addClientToList(String ID, String Isc_Nome, java.sql.Date LISTA_Data_EVENTO) {
         try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
              PreparedStatement stmt = conn.prepareStatement(Queries.ADD_CLIENT_LIST)) {
-            stmt.setString(1, idCliente);
-            stmt.setString(2, nomeLista);
-            stmt.setDate(3, dataEvento);
-            stmt.setDate(4, dataIscrizione);
+            stmt.setDate(1, LISTA_Data_EVENTO);
+            stmt.setString(1, ID);
+            stmt.setString(3, Isc_Nome);
             stmt.executeUpdate();
         showConfirmation("Dati inseriti correttamente.");
         } catch (SQLException e) {

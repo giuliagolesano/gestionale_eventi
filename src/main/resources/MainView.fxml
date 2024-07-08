@@ -16,7 +16,7 @@
     <Button text="Registrazione di un nuovo Evento" onAction="#handleOp2" style="-fx-font-size: 12px;" fx:id="btnOp2"/>
     <Button text="Iscrizione di un Dipendente" onAction="#handleOp3" style="-fx-font-size: 12px;" fx:id="btnOp3"/>
     <Button text="Iscrizione di un Dipendente impiegato in un Evento" onAction="#handleOp4" style="-fx-font-size: 12px;" fx:id="btnOp4"/>
-    <!--<Button text="Registrazione di un nuovo carico di Bevande" onAction="#handleOp5" style="-fx-font-size: 12px;" fx:id="btnOp5"/>-->
+    <Button text="Registrazione di un nuovo carico di Bevande" onAction="#handleOp5" style="-fx-font-size: 12px;" fx:id="btnOp5"/>
     <Button text="Iscrizione di una nuova Lista" onAction="#handleOp6" style="-fx-font-size: 12px;" fx:id="btnOp6"/>
     <Button text="Registrazione di un nuovo Tavolo da un PR" onAction="#handleOp7" style="-fx-font-size: 12px;" fx:id="btnOp7"/>
     <Button text="Iscrizione di un Cliente ad una Prevendita" onAction="#handleOp8" style="-fx-font-size: 12px;" fx:id="btnOp8"/>

@@ -14,11 +14,11 @@ import java.sql.Date;
 public class Op9 {
     
     @FXML
-    private TextField idCliente;
+    private TextField ID;
     @FXML
-    private TextField nome;
+    private TextField Ade_Nome;
     @FXML
-    private DatePicker DataEvento;
+    private DatePicker TAVOLO_Data_EVENTO;
 
     public static final String URL = "jdbc:mysql://localhost:3306/gestionale_eventi";
     public static final String USER = "root"; 
@@ -26,15 +26,16 @@ public class Op9 {
 
     @FXML
     private void executeOperation(){
-        addClientToTable(idCliente.getText(), nome.getText(), Date.valueOf(DataEvento.getValue()));
+        addClientToTable(ID.getText(), Ade_Nome.getText(), Date.valueOf(TAVOLO_Data_EVENTO.getValue()));
     }
 
-    public void addClientToTable(String idCliente, String nomeTavolo, java.sql.Date dataEvento) {
+    public void addClientToTable(String ID, String Ade_Nome, java.sql.Date TAVOLO_Data_EVENTO) {
         try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
              PreparedStatement stmt = conn.prepareStatement(Queries.ADD_CLIENT_TABLE)) {
-            stmt.setString(1, idCliente);
-            stmt.setString(2, nomeTavolo);
-            stmt.setDate(3, dataEvento);
+            stmt.setDate(1, TAVOLO_Data_EVENTO);
+            stmt.setString(2, Ade_Nome);
+            stmt.setString(3, ID);
+            
             stmt.executeUpdate();
         showConfirmation("Dati inseriti correttamente.");
         } catch (SQLException e) {

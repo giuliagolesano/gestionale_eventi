@@ -10,7 +10,7 @@
         <TextField fx:id="Tipologia" promptText="Tipologia"/>
         <DatePicker fx:id="Data_Acquisto" promptText="Data Acquisto"/>
         <DatePicker fx:id="Data_Scadenza" promptText="Data Scadenza"/>
-        <TextField fx:id="Disponibilita" promptText="Disponibilità: ">
+        <TextField fx:id="Disponibilita" promptText="Disponibilità"/>
         <Button text="Esegui" onAction="#executeOperation"/>
     </children>
 </VBox>

@@ -43,12 +43,12 @@ public class Queries {
     /**
      * Query for adding a client to a table.
      */
-    public static final String ADD_CLIENT_TABLE = "";
+    public static final String ADD_CLIENT_TABLE = "UPDATE cliente SET TAVOLO_Data_EVENTO = ?, Ade_Nome = ? WHERE ID = ?;";
 
     /**
      * Query for adding a client to a list.
      */
-    public static final String ADD_CLIENT_LIST = "";
+    public static final String ADD_CLIENT_LIST = "UPDATE Cliente SET LISTA_Data_EVENTO = ?, Isc_Nome = ? WHERE ID = ?;";
 
     /**
      * Query for adding a new blocked client.
