@@ -5,11 +5,16 @@ import it.unibo.util.Queries;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 
+import java.io.IOException;
 import java.sql.Date;
 import java.util.UUID;
 import javax.persistence.Query;
@@ -63,9 +68,24 @@ public class Op1 {
 
             transaction.commit();
             System.out.println("Transazione completata con successo.");
+            
         } catch (Exception e) {
             System.out.println("Errore durante l'operazione: " + e.getMessage());
             showError("Operation failed: " + e.getMessage());
+        }
+    }
+
+    private void loadConfirmationWindow() {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/it/unibo/view/Confirmation.fxml"));
+            Parent root = fxmlLoader.load();
+            Stage stage = new Stage();
+            stage.setTitle("Conferma");
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+            showError("Unable to load confirmation window.");
         }
     }
 

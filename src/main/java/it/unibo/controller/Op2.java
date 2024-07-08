@@ -17,22 +17,22 @@ public class Op2 {
     @FXML
     private TextField Tema;
 
-
     public static final String URL = "jdbc:mysql://localhost:3306/gestionale_eventi";
     public static final String USER = "root"; 
     public static final String PASSWORD = "";
 
     @FXML
-    private void executeOperation(){
+    private void executeOperation() {
         addNewEvent(Date.valueOf(Data.getValue()), Tema.getText());
     }
 
-    public void addNewEvent(java.sql.Date Data, String Tema) {
+    public void addNewEvent(java.sql.Date data, String tema) {
         try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
              PreparedStatement stmt = conn.prepareStatement(Queries.ADD_NEW_EVENT)) {
-            stmt.setDate(1, Data);
-            stmt.setString(2, Tema);
+            stmt.setDate(1, data);
+            stmt.setString(2, tema);
             stmt.executeUpdate();
+            System.out.println("Evento aggiunto con successo.");
         } catch (SQLException e) {
             e.printStackTrace();
         }
