@@ -6,10 +6,10 @@
 <VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="it.unibo.controller.Op14">
     <children>
         <Label fx:id="operationLabel" text="Inserisci i Dati modificati dell'Impiegato"/>
-        <TextField fx:id="nome" promptText="Nome"/>
-        <TextField fx:id="cognome" promptText="Cognome"/>
-        <TextField fx:id="dispo" promptText="Disponibilità"/>
-        <TextField fx:id="tipo" promptText="Tipo"/>
+        <TextField fx:id="Nome" promptText="Nome"/>
+        <TextField fx:id="Cognome" promptText="Cognome"/>
+        <TextField fx:id="Disponibilita" promptText="Disponibilità"/>
+        <TextField fx:id="Tipo" promptText="Tipo"/>
         <TextField fx:id="idDipendente" promptText="Id"/>
         <Button text="Esegui" onAction="#executeOperation"/>
     </children>

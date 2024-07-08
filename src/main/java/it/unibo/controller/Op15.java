@@ -14,15 +14,15 @@ import java.sql.Date;
 public class Op15 {
     
     @FXML
-    private TextField nome;
+    private TextField Nome;
     @FXML
-    private TextField cognome;
+    private TextField Cognome;
     @FXML
-    private DatePicker dataComportamentoIllecito;
+    private DatePicker Data_Comportamento_Illecito;
     @FXML
-    private TextField descrizioneComportamento;
+    private TextField Descrizione_Comportamento_Illecito;
     @FXML
-    private TextField id;
+    private TextField Id;
 
     public static final String URL = "jdbc:mysql://localhost:3306/gestionale_eventi";
     public static final String USER = "root"; 
@@ -30,17 +30,17 @@ public class Op15 {
 
     @FXML
     private void executeOperation(){
-        setBlockedClient(nome.getText(), cognome.getText(), Date.valueOf(dataComportamentoIllecito.getValue()), descrizioneComportamento.getText(), id.getText());
+        setBlockedClient(Nome.getText(), Cognome.getText(), Date.valueOf(Data_Comportamento_Illecito.getValue()), Descrizione_Comportamento_Illecito.getText(), Id.getText());
     }
 
-    public void setBlockedClient(String nome, String cognome, java.sql.Date dataComportamentoIllecito, String descrizioneComportamento, String id) {
+    public void setBlockedClient(String Nome, String Cognome, java.sql.Date Data_Comportamento_Illecito, String Descrizione_Comportamento_Illecito, String Id) {
         try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
              PreparedStatement stmt = conn.prepareStatement(Queries.SET_BLOCKED_CLIENT)) {
-            stmt.setString(1, nome);
-            stmt.setString(2, cognome);
-            stmt.setDate(3, dataComportamentoIllecito);
-            stmt.setString(4, descrizioneComportamento);
-            stmt.setString(5, id);
+            stmt.setString(1, Nome);
+            stmt.setString(2, Cognome);
+            stmt.setDate(3, Data_Comportamento_Illecito);
+            stmt.setString(4, Descrizione_Comportamento_Illecito);
+            stmt.setString(5, Id);
             stmt.executeUpdate();
        showConfirmation("Dati inseriti correttamente.");
         } catch (SQLException e) {

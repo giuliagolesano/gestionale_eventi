@@ -6,11 +6,11 @@
 <VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="it.unibo.controller.Op15">
     <children>
         <Label fx:id="operationLabel" text="Inserisci i Dati modificati del Cliente Bloccato"/>
-        <TextField fx:id="id" promptText="IdClente"/>
-        <TextField fx:id="nome" promptText="Nome"/>
-        <TextField fx:id="cognome" promptText="Nome"/>
-        <DatePicker fx:id="dataComportamentoIllecito" promptText="Data Comportamento Illecito"/>
-        <TextField fx:id="descrizioneComportamento" promptText="Descrizione"/>
+        <TextField fx:id="id_CLIENTE" promptText="IdClente"/>
+        <TextField fx:id="Nome" promptText="Nome"/>
+        <TextField fx:id="Cognome" promptText="Cognome"/>
+        <DatePicker fx:id="Data_Comportamento_Illecito" promptText="Data Comportamento Illecito"/>
+        <TextField fx:id="Descrizione_Comportamento_Illecito" promptText="Descrizione"/>
         <Button text="Esegui" onAction="#executeOperation"/>
     </children>
 </VBox>

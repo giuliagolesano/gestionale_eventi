@@ -7,7 +7,7 @@
     <children>
         <Label fx:id="operationLabel" text="Inserisci i Dati modificati del Tavolo"/>
         <TextField fx:id="Password" promptText="Password"/>
-        <TextField fx:id="Costo" promptText="Costo per Partecipante"/>
+        <TextField fx:id="Costo_per_Partecipante" promptText="Costo per Partecipante"/>
         <TextField fx:id="Posizione" promptText="Posizione nel Locale"/>
         <TextField fx:id="id_PR" promptText="idPR"/>
         <DatePicker fx:id="Data_EVENTO" promptText="Data Evento"/>

@@ -73,7 +73,7 @@ public class Queries {
     /**
      * Query for updating a blocked client.
      */
-    public static final String SET_BLOCKED_CLIENT = "UPDATE cliente_bloccato SET Nome = ?, Cognome = ?, Data_Comportamento_Illecito = ?, Descrizione_Comportamento_Illecito = ? WHERE Id = ?;";
+    public static final String SET_BLOCKED_CLIENT = "UPDATE cliente_bloccato SET Nome = ?, Cognome = ?, Data_Comportamento_Illecito = ?, Descrizione_Comportamento_Illecito = ? WHERE id_CLIENTE = ?;";
 
     /**
      * Query for updating an event.
