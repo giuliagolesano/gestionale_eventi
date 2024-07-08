@@ -78,7 +78,7 @@ public class Queries {
     /**
      * Query for updating an event.
      */
-    public static final String SET_EVENT = "UPDATE evento SET Tema = ? WHERE Data = ? AND Tema = ?;";
+    public static final String SET_EVENT = "UPDATE evento SET Tema = ? WHERE Data = ?;";
 
     /**
      * Query for viewing the number of participants in a table.

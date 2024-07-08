@@ -14,11 +14,9 @@ import java.sql.Date;
 public class Op16 {
     
     @FXML
-    private TextField tema;
+    private TextField Tema;
     @FXML
-    private DatePicker DataEvento;
-    @FXML
-    private TextField codice;
+    private DatePicker Data;
 
     public static final String URL = "jdbc:mysql://localhost:3306/gestionale_eventi";
     public static final String USER = "root"; 
@@ -26,15 +24,14 @@ public class Op16 {
 
     @FXML
     private void executeOperation(){
-        setEvent(tema.getText(), Date.valueOf(DataEvento.getValue()), codice.getText());
+        setEvent(Tema.getText(), Date.valueOf(Data.getValue()));
     }
 
-    public void setEvent(String tema, java.sql.Date data, String codice) {
+    public void setEvent(String Tema, java.sql.Date Data) {
         try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
              PreparedStatement stmt = conn.prepareStatement(Queries.SET_EVENT)) {
-            stmt.setString(1, tema);
-            stmt.setDate(2, data);
-            stmt.setString(3, codice);
+            stmt.setString(1, Tema);
+            stmt.setDate(2, Data);
             stmt.executeUpdate();
         showConfirmation("Dati inseriti correttamente.");
         } catch (SQLException e) {

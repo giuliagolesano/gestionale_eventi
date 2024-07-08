@@ -27,7 +27,7 @@
     <Button text="Modifica dei dati di un Tavolo già registrato" onAction="#handleOp13" style="-fx-font-size: 12px;" fx:id="btnOp13"/>
     <Button text="Modifica dei dati di un Dipendente già registrato" onAction="#handleOp14" style="-fx-font-size: 12px;" fx:id="btnOp14"/>
     <Button text="Modifica dei dati di un Cliente Bloccato già registrato" onAction="#handleOp15" style="-fx-font-size: 12px;" fx:id="btnOp15"/>
-    <!--<Button text="Modifica dei dati di un Evento già registrato" onAction="#handleOp16" style="-fx-font-size: 12px;" fx:id="btnOp16"/>-->
+    <Button text="Modifica dei dati di un Evento già registrato" onAction="#handleOp16" style="-fx-font-size: 12px;" fx:id="btnOp16"/>
     <Button text="Visualizzazione del numero di persone iscritte ad un Tavolo" onAction="#handleOp17" style="-fx-font-size: 12px;" fx:id="btnOp17"/>
     <Button text="Visualizzazione del numero di persone iscritte ad una Lista" onAction="#handleOp18" style="-fx-font-size: 12px;" fx:id="btnOp18"/>
     <Button text="Visualizzazione dei migliori 10 drink!" onAction="#getTenBestDrinks" style="-fx-font-size: 12px;" fx:id="btnOp19"/>
