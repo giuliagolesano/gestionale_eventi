@@ -38,12 +38,12 @@ public class Op13 {
     public void setTable(String Nome, String Password, int Costo_per_Partecipante, String Posizione, String id_PR, java.sql.Date Data_EVENTO) {
         try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
              PreparedStatement stmt = conn.prepareStatement(Queries.SET_TABLE)) {
-            stmt.setString(2, Password);
-            stmt.setInt(3, Costo_per_Partecipante);
-            stmt.setString(4, Posizione);
-            stmt.setString(5, id_PR);
-            stmt.setDate(6, Data_EVENTO);
-            stmt.setString(7, Nome);
+            stmt.setString(1, Password);
+            stmt.setInt(2, Costo_per_Partecipante);
+            stmt.setString(3, Posizione);
+            stmt.setString(4, id_PR);
+            stmt.setDate(5, Data_EVENTO);
+            stmt.setString(6, Nome);
             stmt.executeUpdate();
         showConfirmation("Dati inseriti correttamente.");
         } catch (SQLException e) {

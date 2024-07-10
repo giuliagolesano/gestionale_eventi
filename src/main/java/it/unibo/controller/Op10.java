@@ -35,8 +35,8 @@ public class Op10 {
         try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
              PreparedStatement stmt = conn.prepareStatement(Queries.ADD_CLIENT_LIST)) {
             stmt.setDate(1, LISTA_Data_EVENTO);
-            stmt.setString(1, ID);
-            stmt.setString(3, Isc_Nome);
+            stmt.setString(3, ID);
+            stmt.setString(2, Isc_Nome);
             stmt.executeUpdate();
         showConfirmation("Dati inseriti correttamente.");
         } catch (SQLException e) {

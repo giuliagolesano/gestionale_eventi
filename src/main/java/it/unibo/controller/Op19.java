@@ -31,14 +31,17 @@ public class Op19 {
             ResultSet rs = stmt.executeQuery();
             if (rs.next()) {
                 int numeroBevande = rs.getInt("Numero_di_Bevande");
-                System.out.println("Numero totale di bevande nel menu: " + numeroBevande);
+                String resultMessage = "Numero totale di bevande nel menu: " + numeroBevande;
+                showConfirmation(resultMessage);
+            } else {
+                showConfirmation("Nessuna bevanda trovata per il menu con ID " + Id);
             }
-        showConfirmation("Dati inseriti correttamente.");
         } catch (SQLException e) {
             e.printStackTrace();
             showError("Operation failed: " + e.getMessage());
         }
     }
+    
 
     private void showConfirmation(String message) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);

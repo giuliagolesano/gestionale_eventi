@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import java.sql.Connection;
@@ -358,50 +359,68 @@ public class MainViewController {
             showAlert("Errore durante il caricamento dell'interfaccia!");
         }
     }
+
     @FXML
     public void getTenBestDrinks() {
         try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
-                PreparedStatement stmt = conn.prepareStatement(Queries.TEN_BEST_DRINKS)) {
+            PreparedStatement stmt = conn.prepareStatement(Queries.TEN_BEST_DRINKS)) {
             ResultSet rs = stmt.executeQuery();
+            StringBuilder result = new StringBuilder();
             while (rs.next()) {
                 String nomeBevanda = rs.getString("Nome");
                 int numeroRichieste = rs.getInt("NumeroRichieste");
-                System.out.println("Bevanda: " + nomeBevanda + ", Numero Richieste: " + numeroRichieste);
+                result.append("Bevanda: ").append(nomeBevanda).append(", Numero Richieste: ").append(numeroRichieste).append("\n");
             }
+            showAlert("Le dieci migliori bevande", result.toString());
         } catch (SQLException e) {
             e.printStackTrace();
+            showAlert("Errore", "Si è verificato un errore durante l'esecuzione della query.");
         }
     }
+
     @FXML
     public void getBestTable() {
         try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
-             PreparedStatement stmt = conn.prepareStatement(Queries.BEST_TABLE)) {
+            PreparedStatement stmt = conn.prepareStatement(Queries.BEST_TABLE)) {
             ResultSet rs = stmt.executeQuery();
             if (rs.next()) {
                 String nomeTavolo = rs.getString("Nome");
                 int numeroEventi = rs.getInt("NumeroEventi");
-                System.out.println("Tavolo con più eventi: " + nomeTavolo + ", Numero eventi: " + numeroEventi);
+                String result = "Tavolo con più eventi: " + nomeTavolo + ", Numero eventi: " + numeroEventi;
+                showAlert("Il miglior tavolo", result);
             }
         } catch (SQLException e) {
             e.printStackTrace();
+            showAlert("Errore", "Si è verificato un errore durante l'esecuzione della query.");
         }
     }
 
     @FXML
     public void getBestPR() {
         try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
-             PreparedStatement stmt = conn.prepareStatement(Queries.BEST_PR)) {
+            PreparedStatement stmt = conn.prepareStatement(Queries.BEST_PR)) {
             ResultSet rs = stmt.executeQuery();
             if (rs.next()) {
                 String nomePR = rs.getString("Nome");
                 String cognomePR = rs.getString("Cognome");
                 int incassoTotale = rs.getInt("IncassoTotale");
-                System.out.println("Miglior PR: " + nomePR + " " + cognomePR + ", Incasso totale: " + incassoTotale);
+                String result = "Miglior PR: " + nomePR + " " + cognomePR + ", Incasso totale: " + incassoTotale;
+                showAlert("Il miglior PR", result);
             }
         } catch (SQLException e) {
             e.printStackTrace();
+            showAlert("Errore", "Si è verificato un errore durante l'esecuzione della query.");
         }
     }
+
+    private void showAlert(String title, String message) {
+        Alert alert = new Alert(AlertType.INFORMATION);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
+    }
+
 
     private void showAlert(String message) {
         Alert alert = new Alert(Alert.AlertType.ERROR);

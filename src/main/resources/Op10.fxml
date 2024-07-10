@@ -7,7 +7,7 @@
     <children>
         <Label fx:id="operationLabel" text="Inserisci i Dati del Cliente e della lista"/>
         <DatePicker fx:id="LISTA_Data_EVENTO" promptText="Data Evento"/>
-        <TextField fx:id="Isc_Nome" promptText="Nome Tavolo"/>
+        <TextField fx:id="Isc_Nome" promptText="Nome Lista"/>
         <TextField fx:id="ID" promptText="Id Cliente"/>
         <Button text="Esegui" onAction="#executeOperation"/>
     </children>

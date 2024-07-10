@@ -31,14 +31,16 @@ public class Op18 {
             ResultSet rs = stmt.executeQuery();
             if (rs.next()) {
                 int numeroIscritti = rs.getInt("Numero_Iscrizioni");
-                System.out.println("Numero iscritti alla lista " + nome + ": " + numeroIscritti);
+                String resultMessage = "Numero iscritti alla lista " + nome + ": " + numeroIscritti;
+                showConfirmation(resultMessage);
+            } else {
+                showConfirmation("Nessun iscritto trovato per la lista " + nome);
             }
-        showConfirmation("Dati inseriti correttamente.");
         } catch (SQLException e) {
             e.printStackTrace();
             showError("Operation failed: " + e.getMessage());
         }
-    }
+    }    
 
     private void showConfirmation(String message) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);

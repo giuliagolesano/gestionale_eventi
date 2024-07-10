@@ -31,9 +31,11 @@ public class Op17 {
             ResultSet rs = stmt.executeQuery();
             if (rs.next()) {
                 int numeroPartecipanti = rs.getInt("Numero_Partecipanti");
-                System.out.println("Numero partecipanti al tavolo " + nome + ": " + numeroPartecipanti);
+                String resultMessage = "Numero partecipanti al tavolo " + nome + ": " + numeroPartecipanti;
+                showConfirmation(resultMessage);
+            } else {
+                showConfirmation("Nessun partecipante trovato per il tavolo " + nome);
             }
-        showConfirmation("Dati inseriti correttamente.");
         } catch (SQLException e) {
             e.printStackTrace();
             showError("Operation failed: " + e.getMessage());
